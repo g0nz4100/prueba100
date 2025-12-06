@@ -1,0 +1,1892 @@
+/* ========================================
+   ESTILOS PERSONALIZADOS PARA BOOTSTRAP
+   Temática Melimel - Sistema Apícola
+   ======================================== */
+
+/* ========================================
+   ANIMACIONES GLOBALES
+   ======================================== */
+/* Animación de flotación suave para elementos decorativos */
+@keyframes float {
+    0%, 100% { transform: translateY(0px); }    /* Posición inicial y final */
+    50% { transform: translateY(-20px); }       /* Elevación máxima */
+}
+
+/* ========================================
+   TARJETAS TEMÁTICAS DE MIEL
+   ======================================== */
+/* Tarjetas con temática de miel y efectos hover */
+.honey-card {
+    transition: all 0.3s ease;
+    background: linear-gradient(135deg, #fff9c4 0%, #ffffff 100%);  /* Degradado dorado suave */
+}
+
+/* Efecto hover para tarjetas de miel */
+.honey-card:hover {
+    transform: translateY(-10px);                                    /* Elevación al pasar el mouse */
+    box-shadow: 0 15px 35px rgba(255,193,7,0.3) !important;        /* Sombra dorada */
+}
+
+/* ========================================
+   ELEMENTOS DE ESTADÍSTICAS
+   ======================================== */
+/* Contenedores de estadísticas con efecto glassmorphism */
+.stat-item {
+    padding: 2rem;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.8);          /* Fondo semi-transparente */
+    backdrop-filter: blur(10px);                /* Efecto de desenfoque de fondo */
+    transition: all 0.3s ease;
+}
+
+/* Efecto hover para elementos de estadísticas */
+.stat-item:hover {
+    transform: scale(1.05);                     /* Escalado ligero */
+    background: rgba(255,255,255,0.95);        /* Mayor opacidad al hover */
+}
+
+/* Clase utilitaria para altura mínima del 75% del viewport */
+.min-vh-75 {
+    min-height: 75vh;
+}
+
+/* ========================================
+   NAVBAR HEXAGONAL TIPO PANAL
+   ======================================== */
+/* Contenedor principal de la navegación hexagonal */
+.hexagon-nav {
+    display: flex;
+    flex-wrap: wrap;                    /* Permite ajuste en pantallas pequeñas */
+    gap: 0;                            /* Sin espacio entre hexágonos */
+    align-items: center;
+    justify-content: flex-end;         /* Alineación a la derecha */
+}
+
+/* Botones hexagonales individuales del navbar */
+.hexagon-btn {
+    position: relative;
+    width: 130px;                      /* Ancho del hexágono */
+    height: 112px;                     /* Alto del hexágono */
+    margin: 0;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;        /* Transición suave para efectos */
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);  /* Forma hexagonal */
+    background: linear-gradient(135deg, #FFB74D 0%, #FFA726 50%, #FF9800 100%); /* Degradado dorado */
+    box-shadow: 0 4px 15px rgba(255,152,0,0.3);                                /* Sombra suave */
+    opacity: 0;                        /* Inicialmente invisible para animación */
+    transform: translateY(-30px);      /* Posición inicial para animación */
+    animation: slideInFromTop 0.6s ease forwards;  /* Animación de entrada */
+}
+
+@keyframes slideInFromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.hexagon-btn:nth-child(1) { animation-delay: 0.1s; }
+.hexagon-btn:nth-child(2) { animation-delay: 0.2s; }
+.hexagon-btn:nth-child(3) { animation-delay: 0.3s; }
+.hexagon-btn:nth-child(4) { animation-delay: 0.4s; }
+.hexagon-btn:nth-child(5) { animation-delay: 0.5s; }
+.hexagon-btn:nth-child(6) { animation-delay: 0.6s; }
+.hexagon-btn:nth-child(7) { animation-delay: 0.7s; }
+.hexagon-btn:nth-child(8) { 
+    animation: slideInFromRight 0.6s ease forwards;
+    animation-delay: 0.8s; 
+}
+
+@keyframes slideInFromRight {
+    from {
+        opacity: 0;
+        transform: translateX(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+.hexagon-btn:hover {
+    transform: scale(1.1) translateY(-3px);
+    background: linear-gradient(135deg, #FF9800 0%, #FF8F00 50%, #FF6F00 100%);
+    box-shadow: 0 8px 25px rgba(255,152,0,0.5);
+    text-decoration: none;
+}
+
+.hexagon-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+    z-index: 2;
+}
+
+.hex-icon {
+    font-size: 2.2em;
+    margin-bottom: 4px;
+    color: #333;
+}
+
+.hex-text {
+    font-size: 13px;
+    line-height: 1.1;
+    text-shadow: none;
+    font-weight: 600;
+    color: #333;
+}
+
+.navbar-brand:hover {
+    transform: scale(1.05);
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler {
+    background: rgba(255,255,255,0.2);
+    border-radius: 8px;
+}
+
+.navbar-toggler:focus {
+    box-shadow: 0 0 0 0.2rem rgba(255,255,255,0.25);
+}
+
+@media (max-width: 768px) {
+    .hexagon-nav {
+        flex-direction: column;
+        gap: 5px;
+    }
+    
+    .hexagon-btn {
+        width: 110px;
+        height: 95px;
+    }
+    
+    .hex-text {
+        font-size: 10px;
+    }
+    
+    .hex-icon {
+        font-size: 1.8em;
+    }
+}
+
+/* ========================================
+   MENÚ DESPLEGABLE PARA NAVBAR HEXAGONAL
+   ======================================== */
+.hexagon-dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.hexagon-dropdown-content {
+    display: none;
+    position: absolute;
+    top: 90%; /* Posición justo debajo del hexágono */
+    left: 50%;
+    transform: translateX(-50%);
+    background: linear-gradient(135deg, #FFB74D, #FF8F00);
+    min-width: 220px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    z-index: 1001;
+    border-radius: 12px;
+    overflow: hidden;
+    padding: 10px 0;
+    animation: dropdown-fade-in 0.4s ease forwards;
+}
+
+@keyframes dropdown-fade-in {
+    from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+    }
+}
+
+.hexagon-dropdown-content a {
+    color: #333;
+    font-weight: 600;
+    padding: 12px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+    text-align: left;
+}
+
+.hexagon-dropdown-content a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #000;
+}
+
+/* Mejoras responsivas */
+@media (max-width: 768px) {
+    .product-card {
+        margin-bottom: 2rem;
+    }
+    
+    .display-4 {
+        font-size: 2.5rem;
+    }
+    
+    .display-5 {
+        font-size: 2rem;
+    }
+    
+    .modern-nav-link {
+        margin: 5px 0;
+        text-align: center;
+    }
+    
+    .navbar-brand h4 {
+        font-size: 1.2rem;
+    }
+}
+
+/* Fondo transparente para las secciones principales para que muestren el fondo del body */
+#inicio,
+#productos {
+    background-color: transparent !important;
+}
+
+/* ========================================
+   ENJAMBRE DE ABEJAS ALREDEDOR DEL PANAL
+   ======================================== */
+.bee-swarm {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px;
+    height: 600px;
+    pointer-events: none;
+    z-index: 10;
+}
+
+.swarm-bee {
+    position: absolute;
+    font-size: 1.8rem;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+}
+
+/* Abejas volando en círculo alrededor del panal */
+.bee-1 {
+    top: 10%;
+    left: 50%;
+    animation: beeOrbit1 8s infinite;
+}
+
+.bee-2 {
+    top: 20%;
+    right: 15%;
+    animation: beeOrbit2 10s infinite;
+}
+
+.bee-3 {
+    top: 50%;
+    right: 5%;
+    animation: beeOrbit3 12s infinite;
+}
+
+.bee-4 {
+    bottom: 20%;
+    right: 15%;
+    animation: beeOrbit4 9s infinite;
+}
+
+.bee-5 {
+    bottom: 10%;
+    left: 50%;
+    animation: beeOrbit5 11s infinite;
+}
+
+.bee-6 {
+    bottom: 20%;
+    left: 15%;
+    animation: beeOrbit6 7s infinite;
+}
+
+.bee-7 {
+    top: 50%;
+    left: 5%;
+    animation: beeOrbit7 13s infinite;
+}
+
+.bee-8 {
+    top: 20%;
+    left: 15%;
+    animation: beeOrbit8 6s infinite;
+}
+
+.bee-9 {
+    top: 35%;
+    right: 8%;
+    animation: beeOrbit9 14s infinite;
+}
+
+.bee-10 {
+    bottom: 35%;
+    left: 8%;
+    animation: beeOrbit10 9.5s infinite;
+}
+
+/* Animaciones de órbita circular para cada abeja */
+@keyframes beeOrbit1 {
+    0% { transform: rotate(0deg) translateX(120px) rotate(0deg); }
+    100% { transform: rotate(360deg) translateX(120px) rotate(-360deg); }
+}
+
+@keyframes beeOrbit2 {
+    0% { transform: rotate(45deg) translateX(140px) rotate(-45deg); }
+    100% { transform: rotate(405deg) translateX(140px) rotate(-405deg); }
+}
+
+@keyframes beeOrbit3 {
+    0% { transform: rotate(90deg) translateX(160px) rotate(-90deg); }
+    100% { transform: rotate(450deg) translateX(160px) rotate(-450deg); }
+}
+
+@keyframes beeOrbit4 {
+    0% { transform: rotate(135deg) translateX(130px) rotate(-135deg); }
+    100% { transform: rotate(495deg) translateX(130px) rotate(-495deg); }
+}
+
+@keyframes beeOrbit5 {
+    0% { transform: rotate(180deg) translateX(150px) rotate(-180deg); }
+    100% { transform: rotate(540deg) translateX(150px) rotate(-540deg); }
+}
+
+@keyframes beeOrbit6 {
+    0% { transform: rotate(225deg) translateX(135px) rotate(-225deg); }
+    100% { transform: rotate(585deg) translateX(135px) rotate(-585deg); }
+}
+
+@keyframes beeOrbit7 {
+    0% { transform: rotate(270deg) translateX(170px) rotate(-270deg); }
+    100% { transform: rotate(630deg) translateX(170px) rotate(-630deg); }
+}
+
+@keyframes beeOrbit8 {
+    0% { transform: rotate(315deg) translateX(125px) rotate(-315deg); }
+    100% { transform: rotate(675deg) translateX(125px) rotate(-675deg); }
+}
+
+@keyframes beeOrbit9 {
+    0% { transform: rotate(60deg) translateX(180px) rotate(-60deg); }
+    100% { transform: rotate(420deg) translateX(180px) rotate(-420deg); }
+}
+
+@keyframes beeOrbit10 {
+    0% { transform: rotate(300deg) translateX(145px) rotate(-300deg); }
+    100% { transform: rotate(660deg) translateX(145px) rotate(-660deg); }
+}
+
+/* Responsive para enjambre de abejas */
+@media (max-width: 768px) {
+    .bee-swarm {
+        width: 400px;
+        height: 400px;
+    }
+    
+    .swarm-bee {
+        font-size: 1.3rem;
+    }
+    
+    @keyframes beeOrbit1 {
+        0% { transform: rotate(0deg) translateX(80px) rotate(0deg); }
+        100% { transform: rotate(360deg) translateX(80px) rotate(-360deg); }
+    }
+    
+    @keyframes beeOrbit2 {
+        0% { transform: rotate(45deg) translateX(90px) rotate(-45deg); }
+        100% { transform: rotate(405deg) translateX(90px) rotate(-405deg); }
+    }
+    
+    @keyframes beeOrbit3 {
+        0% { transform: rotate(90deg) translateX(100px) rotate(-90deg); }
+        100% { transform: rotate(450deg) translateX(100px) rotate(-450deg); }
+    }
+    
+    @keyframes beeOrbit4 {
+        0% { transform: rotate(135deg) translateX(85px) rotate(-135deg); }
+        100% { transform: rotate(495deg) translateX(85px) rotate(-495deg); }
+    }
+    
+    @keyframes beeOrbit5 {
+        0% { transform: rotate(180deg) translateX(95px) rotate(-180deg); }
+        100% { transform: rotate(540deg) translateX(95px) rotate(-540deg); }
+    }
+    
+    @keyframes beeOrbit6 {
+        0% { transform: rotate(225deg) translateX(88px) rotate(-225deg); }
+        100% { transform: rotate(585deg) translateX(88px) rotate(-585deg); }
+    }
+    
+    @keyframes beeOrbit7 {
+        0% { transform: rotate(270deg) translateX(105px) rotate(-270deg); }
+        100% { transform: rotate(630deg) translateX(105px) rotate(-630deg); }
+    }
+    
+    @keyframes beeOrbit8 {
+        0% { transform: rotate(315deg) translateX(82px) rotate(-315deg); }
+        100% { transform: rotate(675deg) translateX(82px) rotate(-675deg); }
+    }
+    
+    @keyframes beeOrbit9 {
+        0% { transform: rotate(60deg) translateX(110px) rotate(-60deg); }
+        100% { transform: rotate(420deg) translateX(110px) rotate(-420deg); }
+    }
+    
+    @keyframes beeOrbit10 {
+        0% { transform: rotate(300deg) translateX(92px) rotate(-300deg); }
+        100% { transform: rotate(660deg) translateX(92px) rotate(-660deg); }
+    }
+}
+
+/* Animaciones adicionales para abejas flotantes */
+.floating-bee {
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+/* Efectos para botones temáticos */
+.btn-warning {
+    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    border: none;
+    transition: all 0.3s ease;
+}
+
+.btn-warning:hover {
+    background: linear-gradient(135deg, #FF8F00 0%, #FF6F00 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255,111,0,0.3);
+}
+
+/* Tarjetas de productos modernas */
+.product-card {
+    transition: all 0.4s ease;
+    overflow: hidden;
+}
+
+.product-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.15) !important;
+}
+
+.product-card .card-header {
+    background: linear-gradient(135deg, var(--bs-warning) 0%, #FF8F00 100%);
+    transition: all 0.3s ease;
+}
+
+.product-card:hover .card-header {
+    background: linear-gradient(135deg, #FF8F00 0%, #FF6F00 100%);
+}
+
+/* Tarjetas de características */
+.feature-card {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0,0,0,0.05);
+}
+
+.feature-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1) !important;
+    border-color: rgba(255,193,7,0.3);
+}
+
+.feature-icon {
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.1) rotate(5deg);
+}
+
+/* Sección sobre nosotros mejorada */
+.about-visual .bg-warning,
+.about-visual .bg-success,
+.about-visual .bg-info,
+.about-visual .bg-danger {
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.about-visual .bg-warning:hover,
+.about-visual .bg-success:hover,
+.about-visual .bg-info:hover,
+.about-visual .bg-danger:hover {
+    transform: scale(1.05) rotate(-2deg);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+/* Animaciones de entrada */
+@keyframes slideInUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.product-card,
+.feature-card {
+    animation: slideInUp 0.6s ease forwards;
+}
+
+.product-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.product-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+/* Estilos para tooltips con fuente Century Gothic */
+.tooltip {
+    font-family: 'Century Gothic', 'Futura', 'Arial', sans-serif !important;
+}
+
+.tooltip .tooltip-inner {
+    font-family: 'Century Gothic', 'Futura', 'Arial', sans-serif !important;
+    font-size: 13px;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    background: rgba(33, 37, 41, 0.95) !important;
+    color: #ffffff !important;
+    border-radius: 8px !important;
+    padding: 10px 14px !important;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    max-width: 250px !important;
+    text-align: center !important;
+}
+
+.tooltip .tooltip-arrow {
+    display: none !important;
+}
+
+/* ========================================
+   HEXÁGONOS HERO - PANAL CON MIEL AL CENTRO
+   ======================================== */
+.honeycomb-hero {
+    position: relative;
+    width: 500px;
+    height: 350px;
+    margin: 2rem auto;
+}
+
+.hex-hero {
+    position: absolute;
+    width: 250px;
+    height: 220px;
+}
+
+.hex-hero-1 {
+    top: 0;
+    left: 0;
+}
+
+.hex-hero-2 {
+    top: 0;
+    right: 0;
+}
+
+.hex-hero-3 {
+    top: 110px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.hex-hero-4 {
+    bottom: 0;
+    left: 0;
+}
+
+.hex-hero-shape {
+    width: 250px;
+    height: 220px;
+    background: linear-gradient(135deg, #FFC107 0%, #FFB74D 50%, #FF9800 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hex-hero-shape::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hex-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FF6F00;
+    padding: 25px;
+}
+
+.hex-hero-icon {
+    font-size: 4.5rem;
+    margin-bottom: 12px;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.hex-hero-title {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin: 12px 0 6px 0;
+    color: #FF6F00;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}
+
+.hex-hero-subtitle {
+    font-size: 1rem;
+    font-weight: 500;
+    color: #E65100;
+    opacity: 0.9;
+}
+
+.hex-hero-shape:hover {
+    transform: scale(1.08) rotate(2deg);
+    box-shadow: 0 15px 40px rgba(255, 152, 0, 0.5);
+}
+
+@media (max-width: 768px) {
+    .honeycomb-hero {
+        width: 100%;
+        height: auto;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    .hex-hero {
+        position: relative;
+        top: auto !important;
+        left: auto !important;
+        right: auto !important;
+        bottom: auto !important;
+        transform: none !important;
+        width: 100%;
+        height: auto;
+    }
+    
+    .hex-hero-shape {
+        width: 180px;
+        height: 160px;
+        margin: 0 auto;
+    }
+    
+    .hex-hero-icon {
+        font-size: 3rem;
+    }
+    
+    .hex-hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .hex-hero-subtitle {
+        font-size: 0.9rem;
+    }
+}
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.hex-hero-subtitle {
+    font-size: 1rem;
+    color: #FF8F00;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.hex-hero-shape:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.5);
+}
+
+.hex-hero-shape:hover::before {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFF9C4 100%);
+}
+
+/* Animación de entrada */
+.hex-hero {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: hexHeroFadeIn 0.8s ease forwards;
+}
+
+.hex-hero-1 { animation-delay: 0.2s; }
+.hex-hero-2 { animation-delay: 0.4s; }
+.hex-hero-3 { animation-delay: 0.6s; }
+
+@keyframes hexHeroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .honeycomb-hero {
+        width: 300px;
+        height: 250px;
+        transform: scale(0.9);
+    }
+    
+    .hex-hero {
+        width: 150px;
+        height: 130px;
+    }
+    
+    .hex-hero-shape {
+        width: 150px;
+        height: 130px;
+    }
+    
+    .hex-hero-icon {
+        font-size: 2.8rem;
+    }
+    
+    .hex-hero-title {
+        font-size: 1rem;
+    }
+    
+    .hex-hero-subtitle {
+        font-size: 0.8rem;
+    }
+}erflow: hidden;
+}
+
+.hex-hero-shape::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hex-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FF6F00;
+    padding: 30px;
+}
+
+.hex-hero-icon {
+    font-size: 5.5rem;
+    margin-bottom: 15px;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.hex-hero-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 15px 0 8px 0;
+    color: #FF6F00;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.hex-hero-subtitle {
+    font-size: 1.1rem;
+    color: #FF8F00;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.hex-hero-shape:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.5);
+}
+
+.hex-hero-shape:hover::before {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFF9C4 100%);
+}
+
+/* Animación de entrada */
+.hex-hero {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: hexHeroFadeIn 0.8s ease forwards;
+}
+
+.hex-hero-1 { animation-delay: 0.2s; }
+.hex-hero-2 { animation-delay: 0.4s; }
+
+@keyframes hexHeroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .honeycomb-hero {
+        flex-direction: column;
+        gap: -30px;
+    }
+    
+    .hex-hero {
+        width: 200px;
+        height: 180px;
+    }
+    
+    .hex-hero-1 {
+        margin-right: 0;
+        margin-bottom: -50px;
+    }
+    
+    .hex-hero-shape {
+        width: 200px;
+        height: 180px;
+    }
+    
+    .hex-hero-icon {
+        font-size: 3.5rem;
+    }
+    
+    .hex-hero-title {
+        font-size: 1.2rem;
+    }
+    
+    .hex-hero-subtitle {
+        font-size: 0.9rem;
+    }
+};
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hex-hero-shape::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hex-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FF6F00;
+    padding: 20px;
+}
+
+.hex-hero-icon {
+    font-size: 4rem;
+    margin-bottom: 10px;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.hex-hero-title {
+    font-size: 1.3rem;
+    font-weight: 700;
+    margin: 10px 0 5px 0;
+    color: #FF6F00;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.hex-hero-subtitle {
+    font-size: 0.9rem;
+    color: #FF8F00;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.hex-hero-shape:hover {
+    transform: scale(1.05);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.5);
+}
+
+.hex-hero-shape:hover::before {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFF9C4 100%);
+}
+
+/* Animación de entrada para hexágonos hero */
+.hex-hero {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: hexHeroFadeIn 0.8s ease forwards;
+}
+
+.hex-hero-1 { animation-delay: 0.2s; }
+.hex-hero-2 { animation-delay: 0.4s; }
+.hex-hero-3 { animation-delay: 0.6s; }
+.hex-hero-4 { animation-delay: 0.8s; }
+
+@keyframes hexHeroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+/* Responsive para hexágonos hero */
+@media (max-width: 768px) {
+    .honeycomb-hero {
+        width: 350px;
+        height: 280px;
+        transform: scale(0.8);
+    }
+    
+    .hex-hero {
+        width: 180px;
+        height: 156px;
+    }
+    
+    .hex-hero-1 {
+        top: 0;
+        left: 20px;
+    }
+    
+    .hex-hero-2 {
+        top: 0;
+        left: 150px;
+    }
+    
+    .hex-hero-3 {
+        top: 78px;
+        left: -55px;
+    }
+    
+    .hex-hero-4 {
+        top: 78px;
+        left: 225px;
+    }
+    
+    .hex-hero-shape {
+        width: 180px;
+        height: 156px;
+    }
+    
+    .hex-hero-icon {
+        font-size: 2.5rem;
+    }
+    
+    .hex-hero-title {
+        font-size: 1rem;
+    }
+    
+    .hex-hero-subtitle {
+        font-size: 0.75rem;
+    }
+}lign-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(255, 152, 0, 0.3);
+    position: relative;
+    overflow: hidden;
+}
+
+.hex-hero-shape::before {
+    content: '';
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    right: 10px;
+    bottom: 10px;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hex-hero-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FF6F00;
+    padding: 30px;
+}
+
+.hex-hero-icon {
+    font-size: 5.5rem;
+    margin-bottom: 15px;
+    display: block;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.hex-hero-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    margin: 15px 0 8px 0;
+    color: #FF6F00;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.hex-hero-subtitle {
+    font-size: 1.1rem;
+    color: #FF8F00;
+    font-weight: 500;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.3);
+}
+
+.hex-hero-shape:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 10px 30px rgba(255, 152, 0, 0.5);
+}
+
+.hex-hero-shape:hover::before {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFF9C4 100%);
+}
+
+.hex-hero-shape:hover .hex-hero-content {
+    transform: rotate(-3deg);
+}
+
+/* Animación de entrada para hexágonos hero */
+.hex-hero {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    animation: hexHeroFadeIn 0.8s ease forwards;
+}
+
+.hex-hero-1 { animation-delay: 0.2s; }
+.hex-hero-2 { animation-delay: 0.4s; }
+.hex-hero-3 { animation-delay: 0.6s; }
+.hex-hero-4 { animation-delay: 0.8s; }
+
+@keyframes hexHeroFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive para hexágonos hero */
+@media (max-width: 768px) {
+    .honeycomb-hero {
+        grid-template-columns: repeat(2, 170px);
+        grid-auto-rows: 147px;
+        transform: scale(0.9);
+    }
+    
+    .hex-hero {
+        width: 170px;
+        height: 147px;
+    }
+    
+    .hex-hero-2,
+    .hex-hero-4 {
+        transform: translate(0, 73px); /* medio alto en responsive */
+    }
+    
+    .hex-hero-shape {
+        width: 170px;
+        height: 147px;
+    }
+    
+    .hex-hero-icon {
+        font-size: 3.2rem;
+    }
+    
+    .hex-hero-title {
+        font-size: 1.1rem;
+    }
+    
+    .hex-hero-subtitle {
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   PANAL DE ABEJAS BOOTSTRAP
+   ======================================== */
+.honeycomb-bootstrap {
+    padding: 2rem;
+}
+
+.hex-cell {
+    width: 200px;
+    height: 173px;
+    margin: 0;
+}
+
+.hex-shape {
+    width: 200px;
+    height: 173px;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+    position: relative;
+    overflow: hidden;
+}
+
+.hex-shape::before {
+    content: '';
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    right: 8px;
+    bottom: 8px;
+    background: rgba(255,255,255,0.2);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    z-index: 1;
+}
+
+.hex-content {
+    position: relative;
+    z-index: 2;
+    color: white;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.hex-shape:hover {
+    transform: scale(1.1) rotate(3deg);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+.hex-shape:hover::before {
+    background: rgba(255,255,255,0.3);
+}
+
+/* Animación de entrada para hexágonos */
+.hex-cell {
+    opacity: 0;
+    transform: scale(0.8) translateY(30px);
+    animation: hexBootstrapFadeIn 0.8s ease forwards;
+}
+
+.hex-cell:nth-child(1) { animation-delay: 0.1s; }
+.hex-cell:nth-child(2) { animation-delay: 0.2s; }
+.hex-cell:nth-child(3) { animation-delay: 0.3s; }
+.hex-cell:nth-child(4) { animation-delay: 0.4s; }
+.hex-cell:nth-child(5) { animation-delay: 0.5s; }
+.hex-cell:nth-child(6) { animation-delay: 0.6s; }
+.hex-cell:nth-child(7) { animation-delay: 0.7s; }
+
+@keyframes hexBootstrapFadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.8) translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+/* Responsive para panal Bootstrap */
+@media (max-width: 768px) {
+    .honeycomb-bootstrap {
+        transform: scale(0.7);
+        padding: 1rem;
+    }
+    
+    .hex-cell {
+        width: 120px;
+        height: 104px;
+    }
+    
+    .hex-shape {
+        width: 120px;
+        height: 104px;
+    }
+    
+    .hex-content h6 {
+        font-size: 0.8rem;
+    }
+    
+    .hex-content small {
+        font-size: 0.7rem;
+    }
+    
+    .hex-content .fs-1 {
+        font-size: 1.5rem !important;
+    }
+}
+/* ========================================
+   EFECTO DE MIEL GRUESA CHORREANDO
+   ======================================== */
+.honey-drips {
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    right: 0;
+    height: 250px;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.thick-honey-drip {
+    position: absolute;
+    width: 20px;
+    height: 0;
+    background: linear-gradient(to bottom, 
+        #FFD700 0%, 
+        #FFCC00 20%, 
+        #FFB300 40%, 
+        #FF9500 60%, 
+        #FF8C00 80%, 
+        #E67E00 100%);
+    border-radius: 10px 10px 15px 15px;
+    animation: thickHoneyFlow 8s ease-out infinite;
+    opacity: 0;
+    box-shadow: 
+        inset 2px 0 4px rgba(255, 255, 255, 0.3),
+        0 4px 12px rgba(255, 140, 0, 0.4);
+    filter: blur(0.5px);
+}
+
+.thick-honey-drip::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 16px;
+    height: 12px;
+    background: radial-gradient(ellipse, #FFD700, #FFCC00);
+    border-radius: 50% 50% 30% 30%;
+    box-shadow: inset 1px 1px 3px rgba(255, 255, 255, 0.4);
+}
+
+.thick-honey-drip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 25px;
+    height: 8px;
+    background: radial-gradient(ellipse, 
+        rgba(255, 215, 0, 0.8) 0%, 
+        rgba(255, 140, 0, 0.4) 70%, 
+        transparent 100%);
+    border-radius: 50%;
+    animation: honeyPuddle 8s ease-out infinite;
+    animation-delay: inherit;
+}
+
+@keyframes thickHoneyFlow {
+    0% {
+        opacity: 0;
+        height: 0;
+        transform: scaleY(0);
+    }
+    15% {
+        opacity: 0.9;
+        height: 30px;
+        transform: scaleY(1);
+    }
+    30% {
+        height: 80px;
+        border-radius: 10px 10px 8px 8px;
+    }
+    50% {
+        height: 140px;
+        border-radius: 8px 8px 12px 12px;
+    }
+    70% {
+        height: 200px;
+        border-radius: 6px 6px 15px 15px;
+    }
+    85% {
+        height: 230px;
+        opacity: 0.8;
+    }
+    100% {
+        height: 250px;
+        opacity: 0;
+        border-radius: 4px 4px 20px 20px;
+    }
+}
+
+@keyframes honeyPuddle {
+    0%, 60% {
+        opacity: 0;
+        transform: translateX(-50%) scale(0);
+    }
+    70% {
+        opacity: 0.6;
+        transform: translateX(-50%) scale(0.8);
+    }
+    85% {
+        opacity: 0.8;
+        transform: translateX(-50%) scale(1.2);
+    }
+    100% {
+        opacity: 0;
+        transform: translateX(-50%) scale(1.5);
+    }
+}
+
+/* Efecto hover para acelerar el flujo */
+.honeycomb-bootstrap:hover .thick-honey-drip {
+    animation-duration: 5s;
+}
+
+/* Responsive para miel gruesa */
+@media (max-width: 768px) {
+    .honey-drips {
+        height: 180px;
+    }
+    
+    .thick-honey-drip {
+        width: 15px;
+    }
+    
+    @keyframes thickHoneyFlow {
+        0% {
+            opacity: 0;
+            height: 0;
+        }
+        15% {
+            opacity: 0.9;
+            height: 25px;
+        }
+        30% {
+            height: 60px;
+        }
+        50% {
+            height: 100px;
+        }
+        70% {
+            height: 140px;
+        }
+        85% {
+            height: 160px;
+            opacity: 0.8;
+        }
+        100% {
+            height: 180px;
+            opacity: 0;
+        }
+    }
+}
+/* ========================================
+   EFECTO HOVER CON MIEL
+   ======================================== */
+.hex-hover-container {
+    position: relative;
+    overflow: visible;
+}
+
+.honey-hover-drop {
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 15px;
+    height: 0;
+    background: linear-gradient(to bottom, 
+        #FFD700 0%, 
+        #FFCC00 30%, 
+        #FFB300 60%, 
+        #FF9500 100%);
+    border-radius: 8px 8px 12px 12px;
+    opacity: 0;
+    transition: all 0.4s ease;
+    box-shadow: 
+        inset 2px 0 4px rgba(255, 255, 255, 0.3),
+        0 4px 8px rgba(255, 140, 0, 0.4);
+    z-index: 10;
+}
+
+.honey-hover-drop::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 12px;
+    height: 8px;
+    background: radial-gradient(ellipse, #FFD700, #FFCC00);
+    border-radius: 50% 50% 30% 30%;
+    box-shadow: inset 1px 1px 2px rgba(255, 255, 255, 0.4);
+}
+
+.honey-hover-drop::after {
+    content: '';
+    position: absolute;
+    bottom: -3px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 6px;
+    background: radial-gradient(ellipse, 
+        rgba(255, 215, 0, 0.6) 0%, 
+        rgba(255, 140, 0, 0.3) 70%, 
+        transparent 100%);
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity 0.4s ease 0.3s;
+}
+
+/* Efecto hover */
+.hex-hover-container:hover .honey-hover-drop {
+    height: 80px;
+    opacity: 0.9;
+    animation: honeyDripHover 2s ease-out;
+}
+
+.hex-hover-container:hover .honey-hover-drop::after {
+    opacity: 1;
+}
+
+@keyframes honeyDripHover {
+    0% {
+        height: 0;
+        opacity: 0;
+    }
+    20% {
+        height: 20px;
+        opacity: 0.7;
+    }
+    50% {
+        height: 50px;
+        opacity: 0.9;
+    }
+    80% {
+        height: 80px;
+        opacity: 0.9;
+    }
+    100% {
+        height: 80px;
+        opacity: 0.9;
+    }
+}
+
+/* Efecto especial para el hexágono central (Miel Pura) */
+.hex-hover-container:nth-child(2) .honey-hover-drop {
+    width: 20px;
+}
+
+.hex-hover-container:nth-child(2):hover .honey-hover-drop {
+    height: 100px;
+    animation: honeyDripCenter 2.5s ease-out;
+}
+
+@keyframes honeyDripCenter {
+    0% {
+        height: 0;
+        opacity: 0;
+        width: 20px;
+    }
+    30% {
+        height: 40px;
+        opacity: 0.8;
+        width: 22px;
+    }
+    60% {
+        height: 80px;
+        opacity: 0.9;
+        width: 25px;
+    }
+    100% {
+        height: 100px;
+        opacity: 0.9;
+        width: 25px;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .honey-hover-drop {
+        width: 12px;
+    }
+    
+    .hex-hover-container:hover .honey-hover-drop {
+        height: 60px;
+    }
+    
+    .hex-hover-container:nth-child(2):hover .honey-hover-drop {
+        height: 80px;
+    }
+}
+/* ========================================
+   MASA DE MIEL VISCOSA CAYENDO
+   ======================================== */
+.honey-mass-container {
+    position: absolute;
+    top: -200px;
+    width: 80px;
+    height: 500px;
+    pointer-events: none;
+    z-index: 5;
+}
+
+.honey-mass-1 {
+    left: 30%;
+    transform: translateX(-50%);
+}
+
+.honey-mass-2 {
+    left: 70%;
+    transform: translateX(-50%);
+}
+
+.viscous-honey-mass {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 0;
+    background: linear-gradient(to bottom, 
+        #FFD700 0%, 
+        #FFCC00 15%, 
+        #FFB300 30%, 
+        #FFA500 50%, 
+        #FF9500 70%, 
+        #FF8C00 85%, 
+        #E67E00 100%);
+    border-radius: 30px 30px 40px 40px;
+    animation: viscousHoneyFlow 12s ease-in-out infinite;
+    box-shadow: 
+        inset 4px 0 8px rgba(255, 255, 255, 0.3),
+        inset -4px 0 8px rgba(0, 0, 0, 0.1),
+        0 8px 20px rgba(255, 140, 0, 0.4);
+    filter: blur(0.8px);
+}
+
+.viscous-honey-mass::before {
+    content: '';
+    position: absolute;
+    top: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 40px;
+    height: 25px;
+    background: radial-gradient(ellipse, 
+        #FFD700 0%, 
+        #FFCC00 60%, 
+        transparent 100%);
+    border-radius: 50% 50% 60% 60%;
+    box-shadow: inset 2px 2px 6px rgba(255, 255, 255, 0.4);
+}
+
+.viscous-honey-mass::after {
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    background: linear-gradient(to bottom, #FF8C00, #E67E00);
+    border-radius: 0 0 50% 50%;
+    animation: honeyTip 12s ease-in-out infinite;
+}
+
+@keyframes viscousHoneyFlow {
+    0% {
+        height: 0;
+        opacity: 0;
+        border-radius: 30px 30px 30px 30px;
+    }
+    10% {
+        height: 50px;
+        opacity: 0.7;
+        border-radius: 30px 30px 25px 25px;
+    }
+    25% {
+        height: 120px;
+        opacity: 0.9;
+        border-radius: 25px 25px 20px 20px;
+    }
+    40% {
+        height: 200px;
+        opacity: 0.95;
+        border-radius: 20px 20px 30px 30px;
+    }
+    60% {
+        height: 280px;
+        opacity: 0.95;
+        border-radius: 15px 15px 35px 35px;
+    }
+    80% {
+        height: 350px;
+        opacity: 0.9;
+        border-radius: 10px 10px 40px 40px;
+    }
+    95% {
+        height: 380px;
+        opacity: 0.7;
+        border-radius: 8px 8px 45px 45px;
+    }
+    100% {
+        height: 400px;
+        opacity: 0;
+        border-radius: 5px 5px 50px 50px;
+    }
+}
+
+@keyframes honeyTip {
+    0%, 30% {
+        width: 0;
+        height: 0;
+    }
+    40% {
+        width: 8px;
+        height: 12px;
+    }
+    60% {
+        width: 12px;
+        height: 18px;
+    }
+    80% {
+        width: 15px;
+        height: 25px;
+    }
+    95% {
+        width: 18px;
+        height: 30px;
+    }
+    100% {
+        width: 20px;
+        height: 35px;
+    }
+}
+
+/* Efecto de salpicadura al final */
+.honey-mass-container::after {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 8px;
+    background: radial-gradient(ellipse, 
+        rgba(255, 215, 0, 0.8) 0%, 
+        rgba(255, 140, 0, 0.5) 60%, 
+        transparent 100%);
+    border-radius: 50%;
+    animation: honeySplash 12s ease-in-out infinite;
+}
+
+@keyframes honeySplash {
+    0%, 70% {
+        width: 0;
+        opacity: 0;
+    }
+    80% {
+        width: 60px;
+        opacity: 0.6;
+    }
+    90% {
+        width: 80px;
+        opacity: 0.8;
+    }
+    95% {
+        width: 100px;
+        opacity: 0.6;
+    }
+    100% {
+        width: 120px;
+        opacity: 0;
+    }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .honey-mass-container {
+        width: 60px;
+        height: 300px;
+        top: -80px;
+    }
+    
+    .viscous-honey-mass {
+        width: 45px;
+    }
+    
+    @keyframes viscousHoneyFlow {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        10% {
+            height: 40px;
+            opacity: 0.7;
+        }
+        25% {
+            height: 90px;
+            opacity: 0.9;
+        }
+        40% {
+            height: 150px;
+            opacity: 0.95;
+        }
+        60% {
+            height: 210px;
+            opacity: 0.95;
+        }
+        80% {
+            height: 260px;
+            opacity: 0.9;
+        }
+        95% {
+            height: 280px;
+            opacity: 0.7;
+        }
+        100% {
+            height: 300px;
+            opacity: 0;
+        }
+    }
+}
+/* Segunda masa de miel con delay */
+.honey-mass-2 .viscous-honey-mass {
+    animation-delay: 6s;
+}
+
+/* Ajuste de altura para caer desde más arriba */
+@keyframes viscousHoneyFlow {
+    0% {
+        height: 0;
+        opacity: 0;
+        border-radius: 30px 30px 30px 30px;
+    }
+    8% {
+        height: 60px;
+        opacity: 0.7;
+        border-radius: 30px 30px 25px 25px;
+    }
+    20% {
+        height: 150px;
+        opacity: 0.9;
+        border-radius: 25px 25px 20px 20px;
+    }
+    35% {
+        height: 250px;
+        opacity: 0.95;
+        border-radius: 20px 20px 30px 30px;
+    }
+    55% {
+        height: 350px;
+        opacity: 0.95;
+        border-radius: 15px 15px 35px 35px;
+    }
+    75% {
+        height: 430px;
+        opacity: 0.9;
+        border-radius: 10px 10px 40px 40px;
+    }
+    90% {
+        height: 470px;
+        opacity: 0.7;
+        border-radius: 8px 8px 45px 45px;
+    }
+    100% {
+        height: 500px;
+        opacity: 0;
+        border-radius: 5px 5px 50px 50px;
+    }
+}
+
+/* Responsive para dos masas */
+@media (max-width: 768px) {
+    .honey-mass-container {
+        width: 60px;
+        height: 380px;
+        top: -150px;
+    }
+    
+    .honey-mass-1 {
+        left: 25%;
+    }
+    
+    .honey-mass-2 {
+        left: 75%;
+    }
+    
+    @keyframes viscousHoneyFlow {
+        0% {
+            height: 0;
+            opacity: 0;
+        }
+        8% {
+            height: 45px;
+            opacity: 0.7;
+        }
+        20% {
+            height: 110px;
+            opacity: 0.9;
+        }
+        35% {
+            height: 190px;
+            opacity: 0.95;
+        }
+        55% {
+            height: 270px;
+            opacity: 0.95;
+        }
+        75% {
+            height: 330px;
+            opacity: 0.9;
+        }
+        90% {
+            height: 360px;
+            opacity: 0.7;
+        }
+        100% {
+            height: 380px;
+            opacity: 0;
+        }
+    }
+}

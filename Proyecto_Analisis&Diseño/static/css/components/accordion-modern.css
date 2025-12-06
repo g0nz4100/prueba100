@@ -1,0 +1,264 @@
+/* ACORDEÓN MODERNO BOOTSTRAP 5 */
+.accordion-modern {
+    --bs-accordion-color: rgba(255,255,255,0.95);
+    --bs-accordion-bg: rgba(255,255,255,0.1);
+    --bs-accordion-border-color: rgba(255,193,7,0.2);
+    --bs-accordion-border-radius: 20px;
+    --bs-accordion-inner-border-radius: 15px;
+    --bs-accordion-btn-padding-x: 30px;
+    --bs-accordion-btn-padding-y: 25px;
+    --bs-accordion-btn-color: #2c2c2c;
+    --bs-accordion-btn-bg: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    --bs-accordion-btn-icon: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%232c2c2c'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e");
+    --bs-accordion-btn-icon-width: 1.5rem;
+    --bs-accordion-btn-icon-transform: rotate(-180deg);
+    --bs-accordion-btn-focus-border-color: rgba(255,193,7,0.5);
+    --bs-accordion-btn-focus-box-shadow: 0 0 0 0.25rem rgba(255,193,7,0.25);
+    --bs-accordion-body-padding-x: 30px;
+    --bs-accordion-body-padding-y: 35px;
+    --bs-accordion-active-color: #2c2c2c;
+    --bs-accordion-active-bg: linear-gradient(135deg, #FF8F00 0%, #F57C00 100%);
+}
+
+.accordion-modern .accordion-item {
+    background: rgba(255,255,255,0.1);
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    border: 2px solid rgba(255,193,7,0.2);
+    backdrop-filter: blur(15px);
+    margin-bottom: 20px;
+    transition: all 0.3s ease;
+}
+
+.accordion-modern .accordion-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,193,7,0.4);
+    border-color: rgba(255,193,7,0.4);
+}
+
+.accordion-modern .accordion-header {
+    margin-bottom: 0;
+}
+
+.accordion-modern .accordion-button {
+    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    color: #2c2c2c;
+    font-weight: 700;
+    font-size: 1.4rem;
+    padding: 25px 30px;
+    border: none;
+    border-radius: 0;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    transition: all 0.3s ease;
+}
+
+.accordion-modern .accordion-button:not(.collapsed) {
+    background: linear-gradient(135deg, #FF8F00 0%, #F57C00 100%);
+    color: #2c2c2c;
+    box-shadow: none;
+}
+
+.accordion-modern .accordion-button:hover {
+    background: linear-gradient(135deg, #FF8F00 0%, #F57C00 100%);
+}
+
+.accordion-modern .accordion-button:focus {
+    border-color: rgba(255,193,7,0.5);
+    box-shadow: 0 0 0 0.25rem rgba(255,193,7,0.25);
+}
+
+.accordion-modern .accordion-button::after {
+    content: '+';
+    background-image: none;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #2c2c2c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.accordion-modern .accordion-button:not(.collapsed)::after {
+    content: '−';
+    transform: none;
+}
+
+.accordion-modern .accordion-body {
+    padding: 35px 30px;
+    line-height: 1.8;
+    background: linear-gradient(135deg, rgba(255,255,255,0.05) 0%, rgba(255,193,7,0.02) 100%);
+}
+
+.accordion-modern .accordion-body p {
+    color: rgba(255,255,255,0.95);
+    margin-bottom: 20px;
+    font-size: 1.05rem;
+    text-align: justify;
+    line-height: 1.8;
+}
+
+.accordion-modern .accordion-body ul li {
+    text-align: justify;
+}
+
+.accordion-modern .accordion-body h5,
+.accordion-modern .accordion-body h4 {
+    text-align: left;
+}
+
+/* ICONOS EN LOS TÍTULOS */
+.accordion-icon {
+    font-size: 2rem;
+    color: #2c2c2c;
+    margin-right: 15px;
+}
+
+/* CAJAS DESTACADAS */
+.highlight-box {
+    background: linear-gradient(135deg, rgba(255,193,7,0.15) 0%, rgba(255,152,0,0.1) 100%);
+    border-left: 5px solid #FFC107;
+    padding: 25px;
+    border-radius: 12px;
+    margin: 30px 0;
+    box-shadow: 0 5px 15px rgba(255,193,7,0.2);
+}
+
+.highlight-box h5, .highlight-box h4 {
+    color: #FFD54F;
+    font-weight: 700;
+    margin-bottom: 18px;
+    font-size: 1.2rem;
+}
+
+.highlight-box ul {
+    margin: 0;
+    padding-left: 25px;
+}
+
+.highlight-box li {
+    margin-bottom: 10px;
+    color: rgba(255,255,255,0.9);
+    font-size: 1rem;
+}
+
+/* TARJETAS INFORMATIVAS */
+.info-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+    margin: 25px 0;
+}
+
+.info-card {
+    background: rgba(255,193,7,0.08);
+    border: 2px solid rgba(255,193,7,0.3);
+    border-radius: 15px;
+    padding: 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.info-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(255,193,7,0.3);
+    border-color: rgba(255,193,7,0.5);
+}
+
+.info-card i {
+    font-size: 2.5rem;
+    color: #FFC107;
+    margin-bottom: 15px;
+}
+
+.info-card h6 {
+    color: #FFD54F;
+    font-weight: 700;
+    margin-bottom: 12px;
+    font-size: 1.1rem;
+}
+
+.info-card p {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.95rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+/* ANIMACIONES SUAVES */
+.accordion-modern .accordion-collapse {
+    transition: all 0.3s ease;
+}
+
+/* TOOLTIP ANIMADO */
+.section-tooltip {
+    position: absolute;
+    background: linear-gradient(135deg, #FFC107, #FF8F00);
+    color: #2c2c2c;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    box-shadow: 0 4px 12px rgba(255,193,7,0.6);
+    z-index: 1001;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateX(-50%) translateY(-5px);
+    transition: all 0.3s ease;
+    pointer-events: none;
+    white-space: nowrap;
+    border: 1px solid rgba(255,255,255,0.3);
+    top: -40px;
+    left: 50%;
+}
+
+.section-tooltip.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateX(-50%) translateY(0);
+}
+
+.section-tooltip::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 0;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid #FFC107;
+}
+
+.accordion-modern .accordion-item {
+    position: relative;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .accordion-modern .accordion-button {
+        font-size: 1.2rem;
+        padding: 20px 25px;
+        gap: 15px;
+    }
+    
+    .accordion-modern .accordion-body {
+        padding: 25px 20px;
+    }
+    
+    .accordion-icon {
+        font-size: 1.5rem;
+    }
+    
+    .section-tooltip {
+        display: none;
+    }
+}

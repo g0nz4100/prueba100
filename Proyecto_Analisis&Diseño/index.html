@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="es">
+  <!-- CONFIGURACIÓN DEL DOCUMENTO -->
+  <head>
+    <!-- Configuración de caracteres y viewport para dispositivos móviles -->
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Título que aparece en la pestaña del navegador -->
+    <title>Melimel - Vivir con gusto</title>
+    <!-- Iconos que aparecen en la pestaña del navegador en diferentes tamaños -->
+    <link rel="icon" href="static/img/icons/favicon.png" type="image/png" sizes="16x16" />
+    <link rel="icon" href="static/img/icons/favicon.png" type="image/png" sizes="32x32" />
+    <link rel="icon" href="static/img/icons/favicon.png" type="image/png" sizes="64x64" />
+    <link rel="apple-touch-icon" href="static/img/icons/favicon.png" sizes="180x180" />
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" />
+    <!-- Enlace al archivo CSS externo para los estilos -->
+    <link rel="stylesheet" href="static/css/global/styles.css" />
+    <link rel="stylesheet" href="static/css/global/bootstrap-custom.css" />
+    <link rel="stylesheet" href="static/css/components/favicon-boost.css" />
+  </head>
+  <body>
+    <!-- ELEMENTOS DECORATIVOS DE FONDO -->
+    <!-- Flores decorativas fijas en diferentes posiciones de la pantalla -->
+    <div class="flower" style="bottom: 10%; left: 5%;">🌸</div>
+    <div class="flower" style="bottom: 15%; left: 15%;">🌺</div>
+    <div class="flower" style="bottom: 8%; right: 10%;">🌼</div>
+    <div class="flower" style="bottom: 20%; right: 20%;">🌻</div>
+    <div class="flower" style="top: 60%; left: 8%;">🌷</div>
+    <div class="flower" style="top: 65%; right: 12%;">🌹</div>
+
+    <!-- ABEJAS ANIMADAS -->
+    <!-- 5 abejas que vuelan por la pantalla con diferentes velocidades y rutas -->
+    <!-- Abeja 1: Duración 18s, sin retraso -->
+    <div class="bee-container" style="animation-duration: 18s; animation-delay: 0s;">
+      <div class="bee-wings">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+      </div>
+      <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- Abeja 2: Duración 22s, retraso 3s, posición 40% -->
+    <div class="bee-container" style="animation-duration: 22s; animation-delay: 3s; top: 40%;">
+      <div class="bee-wings">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+      </div>
+      <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- Abeja 3: Duración 25s, retraso 6s, posición 50% -->
+    <div class="bee-container" style="animation-duration: 25s; animation-delay: 6s; top: 50%;">
+      <div class="bee-wings">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+      </div>
+      <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- Abeja 4: Duración 20s, retraso 9s, posición 70% -->
+    <div class="bee-container" style="animation-duration: 20s; animation-delay: 9s; top: 70%;">
+      <div class="bee-wings">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+      </div>
+      <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- Abeja 5: Duración 24s, retraso 12s, posición 30% -->
+    <div class="bee-container" style="animation-duration: 24s; animation-delay: 12s; top: 30%;">
+      <div class="bee-wings">
+        <div class="wing left"></div>
+        <div class="wing right"></div>
+      </div>
+      <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- NAVBAR MODERNO CON BOOTSTRAP -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: linear-gradient(135deg, #FFC107 0%, #FFB74D 100%); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+      <div class="container">
+        <!-- Logo de la empresa -->
+        <a class="navbar-brand d-flex align-items-center" href="#inicio">
+          <img src="https://www.melimel.com.bo/wp-content/uploads/logo-meli_Mesa-de-trabajo-1.png" alt="Melimel Logo" height="60" class="me-3 rounded-3" />
+          <div>
+            <h4 class="mb-0 text-white fw-bold">Melimel</h4>
+            <small class="text-white-50">Vivir con gusto</small>
+          </div>
+        </a>
+
+        <!-- Botón hamburguesa para móvil -->
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+
+        <!-- Menú de navegación hexagonal -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <div class="hexagon-nav ms-auto d-flex flex-wrap justify-content-end align-items-center">
+            <a class="hexagon-btn" href="#inicio" data-bs-toggle="tooltip" data-bs-placement="left" title="Página principal de Melimel">
+              <div class="hexagon-content">
+                <i class="bi bi-house-fill hex-icon"></i>
+                <span class="hex-text">inicio</span>
+              </div>
+            </a>
+            <!-- Menú Desplegable para Marco Teórico -->
+            <div class="hexagon-dropdown">
+              <a class="hexagon-btn" href="templates/pages/marco-teorico.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Fundamentos teóricos del proyecto">
+                <div class="hexagon-content">
+                  <i class="bi bi-book-fill hex-icon"></i>
+                  <span class="hex-text">marco teórico</span>
+                </div>
+              </a>
+              <div class="hexagon-dropdown-content">
+                <a href="templates/pages/marco-teorico.html#introduccion">Introducción</a>
+                <a href="templates/pages/marco-teorico.html#antecedentes">Antecedentes</a>
+                <a href="templates/pages/marco-teorico.html#planteamiento">Planteamiento del Problema</a>
+                <a href="templates/pages/marco-teorico.html#arbol-problemas">Árbol de Problemas</a>
+                <a href="templates/pages/marco-teorico.html#formulacion">Formulación del Problema</a>
+                <a href="templates/pages/marco-teorico.html#objetivos">Objetivos</a>
+                <a href="templates/pages/marco-teorico.html#proposito">Propósito de Estudio</a>
+                <a href="templates/pages/marco-teorico.html#metodologia">Metodología</a>
+                <a href="templates/pages/marco-teorico.html#planificacion">Plan de Actividades</a>
+              </div>
+            </div>
+            <a class="hexagon-btn" href="#analisis" data-bs-toggle="tooltip" data-bs-placement="left" title="Análisis estructural del sistema">
+              <div class="hexagon-content">
+                <i class="bi bi-diagram-3-fill hex-icon"></i>
+                <span class="hex-text">análisis</span>
+              </div>
+            </a>
+            <a class="hexagon-btn" href="#objetos" data-bs-toggle="tooltip" data-bs-placement="left" title="Programación orientada a objetos">
+              <div class="hexagon-content">
+                <i class="bi bi-boxes hex-icon"></i>
+                <span class="hex-text">objetos</span>
+              </div>
+            </a>
+            <a class="hexagon-btn" href="#diagrama" data-bs-toggle="tooltip" data-bs-placement="left" title="Diagramas y modelado de objetos">
+              <div class="hexagon-content">
+                <i class="bi bi-diagram-2-fill hex-icon"></i>
+                <span class="hex-text">diagrama</span>
+              </div>
+            </a>
+            <a class="hexagon-btn" href="templates/pages/video.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Video demostrativo del proyecto">
+              <div class="hexagon-content">
+                <i class="bi bi-play-circle-fill hex-icon"></i>
+                <span class="hex-text">video</span>
+              </div>
+            </a>
+            <a class="hexagon-btn" href="#contacto" data-bs-toggle="tooltip" data-bs-placement="left" title="Información de contacto de Melimel">
+              <div class="hexagon-content">
+                <i class="bi bi-telephone-fill hex-icon"></i>
+                <span class="hex-text">contacto</span>
+              </div>
+            </a>
+            <a class="hexagon-btn" href="templates/pages/acerca.html" data-bs-toggle="tooltip" data-bs-placement="left" title="Grupo N°20 - Análisis y Diseño de Sistemas - UMSA">
+              <div class="hexagon-content">
+                <i class="bi bi-people-fill hex-icon"></i>
+                <span class="hex-text">acerca de nosotros</span>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- SECCIÓN DE INICIO CON BOOTSTRAP -->
+    <section id="inicio" class="py-5" style="min-height: 80vh;">
+      <div class="container">
+        <!-- Hero Principal -->
+        <div class="row align-items-center min-vh-75">
+          <div class="col-lg-6">
+            <div class="hero-content">
+              <h1 class="display-3 fw-bold text-warning mb-4">
+                <i class="bi bi-gear-fill text-primary"></i>
+                <strong style="color: #595858ff;">Bienvenidos</strong>
+              </h1>
+              <p class="lead text-muted fs-5"><strong>Nuestro sistema permite a administradores y responsables comerciales manejar de manera eficiente el registro, control y seguimiento de pedidos e inventarios, garantizando que cada operación se realice de forma ágil y confiable.</strong></p>
+              <ul class="fs-6 text-secondary mb-4">
+              </ul>
+              <p class="lead text-muted fs-5"><strong>Este sistema ha sido diseñado bajo principios de eficiencia, trazabilidad y confiabilidad, ofreciendo una plataforma integral que conecta las áreas de ventas, almacén y administración en un entorno unificado.</strong></p>
+              
+              <div class="d-flex gap-3 flex-wrap">
+                <a href="templates/pages/video.html" class="btn btn-warning btn-lg px-4 py-3 rounded-pill shadow"><i class="bi bi-book-fill me-2"></i>Ver Video</a>
+                <a href="#contacto" class="btn btn-warning btn-lg px-4 py-3 rounded-pill shadow"><i class="bi bi-telephone-fill me-2"></i>Contáctanos</a>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="hero-visual position-relative d-flex justify-content-center align-items-center" style="margin-top: -80px;">
+              <!-- Panal de Abejas Bootstrap -->
+              <div class="honeycomb-bootstrap position-relative" style="transform: scale(1.15);">
+                <!-- Fila Superior -->
+                <div class="d-flex justify-content-center mb-n5" style="transform: translateY(40px);">
+                  <div class="hex-cell me-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">🔒</div>
+                        <h6 class="fw-bold mb-0 text-dark">Seguridad</h6>
+                        <small class="text-dark">Protegido</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-cell ms-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">📊</div>
+                        <h6 class="fw-bold mb-0 text-dark">Reportes</h6>
+                        <small class="text-dark">Análisis</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fila Central -->
+                <div class="d-flex justify-content-center mb-n5">
+                  <div class="hex-cell me-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">📦</div>
+                        <h6 class="fw-bold mb-0 text-dark">Inventario</h6>
+                        <small class="text-dark">Control</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-cell mx-n2">
+                    <div class="hex-shape bg-gradient" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">📝</div>
+                        <h6 class="fw-bold mb-0 text-dark">Pedidos</h6>
+                        <small class="text-dark">Gestión</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-cell ms-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">👥</div>
+                        <h6 class="fw-bold mb-0 text-dark">Usuarios</h6>
+                        <small class="text-dark">Roles</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Fila Inferior -->
+                <div class="d-flex justify-content-center" style="transform: translateY(-40px);">
+                  <div class="hex-cell me-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">⚡</div>
+                        <h6 class="fw-bold mb-0 text-dark">Eficiencia</h6>
+                        <small class="text-dark">Rápido</small>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="hex-cell ms-n2">
+                    <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                      <div class="hex-content text-center">
+                        <div class="fs-1 mb-1">💰</div>
+                        <h6 class="fw-bold mb-0 text-dark">Ventas</h6>
+                        <small class="text-dark">Seguimiento</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Masas de Miel Viscosa -->
+              <div class="honey-mass-container honey-mass-1">
+                <div class="viscous-honey-mass"></div>
+              </div>
+              <div class="honey-mass-container honey-mass-2">
+                <div class="viscous-honey-mass"></div>
+              </div>
+
+              <!-- Enjambre de Abejas -->
+              <div class="bee-swarm">
+                <div class="swarm-bee bee-1">🐝</div>
+                <div class="swarm-bee bee-2">🐝</div>
+                <div class="swarm-bee bee-3">🐝</div>
+                <div class="swarm-bee bee-4">🐝</div>
+                <div class="swarm-bee bee-5">🐝</div>
+                <div class="swarm-bee bee-6">🐝</div>
+                <div class="swarm-bee bee-7">🐝</div>
+                <div class="swarm-bee bee-8">🐝</div>
+                <div class="swarm-bee bee-9">🐝</div>
+                <div class="swarm-bee bee-10">🐝</div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- SECCIÓN DE PRODUCTOS MODERNA -->
+    <section id="productos" class="py-5">
+      <div class="container">
+        <!-- Título de sección -->
+        <div class="text-center mb-5">
+          <h2 class="display-4 fw-bold" style="color: #595858ff;"><i class="bi bi-basket2-fill me-3"></i>Nuestros Productos</h2>
+          <p class="lead text-muted fs-5"><strong>Descubre nuestra selección premium de productos naturales</strong></p>
+          <div class="mx-auto" style="width: 100px; height: 4px; background: linear-gradient(90deg, #FFC107, #FF8F00); border-radius: 2px;"></div>
+        </div>
+
+        <!-- Productos principales en forma de panal -->
+        <div class="row g-4 mb-5">
+          <div class="col-lg-6">
+            <!-- Panal de Abejas Bootstrap -->
+            <div class="honeycomb-bootstrap position-relative" style="margin-top: 80px; margin-left: -50px; transform: scale(1.15);">
+              
+              <!-- Enjambre de Abejas para el segundo panal -->
+              <div class="bee-swarm-productos">
+                <div class="swarm-bee-prod bee-prod-1">🐝</div>
+                <div class="swarm-bee-prod bee-prod-2">🐝</div>
+                <div class="swarm-bee-prod bee-prod-3">🐝</div>
+                <div class="swarm-bee-prod bee-prod-4">🐝</div>
+                <div class="swarm-bee-prod bee-prod-5">🐝</div>
+                <div class="swarm-bee-prod bee-prod-6">🐝</div>
+                <div class="swarm-bee-prod bee-prod-7">🐝</div>
+                <div class="swarm-bee-prod bee-prod-8">🐝</div>
+              </div>
+              
+              <!-- Fila Superior -->
+              <div class="d-flex justify-content-center mb-n5" style="transform: translateY(40px);">
+                <div class="hex-cell me-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🍯</div>
+                      <h6 class="fw-bold mb-0 text-dark">Miel</h6>
+                      <small class="text-dark">Artesanal</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="hex-cell ms-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🥛</div>
+                      <h6 class="fw-bold mb-0 text-dark">Polen</h6>
+                      <small class="text-dark">Fresco</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fila Central -->
+              <div class="d-flex justify-content-center mb-n5">
+                <div class="hex-cell me-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🌿</div>
+                      <h6 class="fw-bold mb-0 text-dark">Extractos</h6>
+                      <small class="text-dark">Hierbas</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="hex-cell mx-n2">
+                  <div class="hex-shape bg-gradient" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🍯</div>
+                      <h6 class="fw-bold mb-0 text-dark">Propóleo</h6>
+                      <small class="text-dark">Natural</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="hex-cell ms-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🧈</div>
+                      <h6 class="fw-bold mb-0 text-dark">Jalea Real</h6>
+                      <small class="text-dark">Premium</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Fila Inferior -->
+              <div class="d-flex justify-content-center" style="transform: translateY(-40px);">
+                <div class="hex-cell me-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🌱</div>
+                      <h6 class="fw-bold mb-0 text-dark">Orgánicos</h6>
+                      <small class="text-dark">Certificado</small>
+                    </div>
+                  </div>
+                </div>
+                <div class="hex-cell ms-n2">
+                  <div class="hex-shape" style="background: linear-gradient(135deg, #FFD700 0%, #FFA500 100%) !important;">
+                    <div class="hex-content text-center">
+                      <div class="fs-1 mb-1">🕯️</div>
+                      <h6 class="fw-bold mb-0 text-dark">Cera</h6>
+                      <small class="text-dark">Pura</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-6">
+            <div class="d-flex flex-column gap-4">
+              <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #FFF8E1 0%, #FFECB3 100%);">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="display-4 me-3">🍯</div>
+                    <div>
+                      <h4 class="fw-bold mb-1" style="color: #F57C00;">Miel Pura de Abeja</h4>
+                      <p class="mb-0 text-muted">100% Natural y Artesanal</p>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled mb-3">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sin Aditivos</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Rica en Antioxidantes</li>
+                  </ul>
+                  <button class="btn btn-warning rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalMielPura"><i class="bi bi-eye me-2"></i>Ver Detalles</button>
+                </div>
+              </div>
+              
+              <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #E8F5E9 0%, #C8E6C9 100%);">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="display-4 me-3">🌿</div>
+                    <div>
+                      <h4 class="fw-bold mb-1" style="color: #388E3C;">Extractos Naturales</h4>
+                      <p class="mb-0 text-muted">Hierbas Locales</p>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled mb-3">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Proceso Tradicional</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Propiedades Medicinales</li>
+                  </ul>
+                  <button class="btn btn-success rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalExtractos"><i class="bi bi-eye me-2"></i>Ver Detalles</button>
+                </div>
+              </div>
+              
+              <div class="card border-0 shadow-lg" style="background: linear-gradient(135deg, #E1F5FE 0%, #B3E5FC 100%);">
+                <div class="card-body p-4">
+                  <div class="d-flex align-items-center mb-3">
+                    <div class="display-4 me-3">🌱</div>
+                    <div>
+                      <h4 class="fw-bold mb-1" style="color: #0277BD;">Productos Orgánicos</h4>
+                      <p class="mb-0 text-muted">Certificados</p>
+                    </div>
+                  </div>
+                  <ul class="list-unstyled mb-3">
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Libre de Químicos</li>
+                    <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>Sostenible</li>
+                  </ul>
+                  <button class="btn btn-info rounded-pill fw-bold" data-bs-toggle="modal" data-bs-target="#modalOrganicos"><i class="bi bi-eye me-2"></i>Ver Detalles</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+
+      </div>
+    </section>
+
+    <!-- FOOTER SIMPLIFICADO -->
+    <footer id="contacto">
+      <div class="footer-content">
+        <!-- SECCIÓN DE CONTACTO -->
+        <div class="footer-section">
+          <h3>🍯 Melimel</h3>
+          <p>"Vivir con gusto" - La dulzura natural de nuestras abejas</p>
+
+          <div class="contact-person">
+            <h4>📞 Contáctanos</h4>
+            <p>📱 WhatsApp: +591 73659001</p>
+            <p>✉️ contacto@melimel.com.bo</p>
+            <p>🌐 www.melimel.com.bo</p>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE LA EMPRESA -->
+        <div class="footer-section">
+          <h3>🏢 Nuestra Empresa</h3>
+          <p>Especialistas en productos apícolas de calidad premium</p>
+
+          <div class="contact-person">
+            <h4>Melimel Bolivia</h4>
+            <p>🏆 Fundada en 2009</p>
+            <p>🌍 Ubicación: Bolivia</p>
+            <p>🍯 Miel Artesanal y Productos Naturales</p>
+            <p>🌱 Certificaciones Orgánico Internacional</p>
+            <p>💛 Misión: Vivir con gusto naturalmente</p>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE REDES SOCIALES -->
+        <div class="footer-section">
+          <h3>🌐 Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">💼</a>
+            <a href="#" class="social-icon">🎵</a>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <p>
+              <strong>Productos:</strong>
+            </p>
+            <p>🍯 Miel Pura • 🌿 Extractos Naturales</p>
+            <p>🌱 Productos Orgánicos • 🏆 Calidad Premium</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMACIÓN DE COPYRIGHT -->
+      <div class="footer-bottom">
+        © Copyright 2024 Melimel Bolivia - Todos los derechos reservados<br />
+        "Vivir con gusto" - Diseñado con 💛 para los amantes de la miel natural
+      </div>
+    </footer>
+
+    <!-- MODAL DETALLES MIEL PURA -->
+    <div class="modal fade" id="modalMielPura" tabindex="-1" aria-labelledby="modalMielPuraLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-warning text-white">
+            <h5 class="modal-title fw-bold" id="modalMielPuraLabel"><span class="me-2" style="font-size: 1.5em;">🍯</span>Miel Pura de Abeja - Detalles Completos</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="text-center mb-4">
+                  <div style="font-size: 8rem; line-height: 1;">🍯</div>
+                  <h4 class="text-warning fw-bold">Miel Pura Artesanal</h4>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-warning mb-3">✨ Características Principales</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>100% Natural:</strong> Sin aditivos ni conservantes
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Cosecha Artesanal:</strong> Extraída con métodos tradicionales
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Rica en Antioxidantes:</strong> Beneficios naturales para la salud
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Origen Local:</strong> De nuestras colmenas en Bolivia
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="text-warning mb-3">🌿 Beneficios para la Salud</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">• Fortalece el sistema inmunológico</li>
+                  <li class="mb-2">• Propiedades antibacterianas naturales</li>
+                  <li class="mb-2">• Fuente natural de energía</li>
+                  <li class="mb-2">• Ayuda en la digestión</li>
+                  <li class="mb-2">• Rico en vitaminas y minerales</li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-warning mb-3">📋 Información Nutricional</h5>
+                <div class="bg-light p-3 rounded">
+                  <p class="mb-1">
+                    <strong>Por 100g:</strong>
+                  </p>
+                  <p class="mb-1">Calorías: 304 kcal</p>
+                  <p class="mb-1">Carbohidratos: 82.4g</p>
+                  <p class="mb-1">Azúcares naturales: 82.1g</p>
+                  <p class="mb-1">Proteínas: 0.3g</p>
+                  <p class="mb-0">Grasas: 0g</p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-12">
+                <h5 class="text-warning mb-3">🍯 Usos Recomendados</h5>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">☕</div>
+                      <h6>Endulzante Natural</h6>
+                      <small class="text-muted">Para té, café y bebidas</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🥞</div>
+                      <h6>Desayunos</h6>
+                      <small class="text-muted">Pancakes, tostadas y cereales</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🧴</div>
+                      <h6>Cuidado Natural</h6>
+                      <small class="text-muted">Mascarillas y tratamientos</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-warning"><i class="bi bi-whatsapp me-2"></i>Consultar Precio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DETALLES EXTRACTOS NATURALES -->
+    <div class="modal fade" id="modalExtractos" tabindex="-1" aria-labelledby="modalExtractosLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-success text-white">
+            <h5 class="modal-title fw-bold" id="modalExtractosLabel"><span class="me-2" style="font-size: 1.5em;">🌿</span>Extractos Naturales - Detalles Completos</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="text-center mb-4">
+                  <div style="font-size: 8rem; line-height: 1;">🌿</div>
+                  <h4 class="text-success fw-bold">Extractos de Hierbas Locales</h4>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-success mb-3">✨ Características Principales</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Hierbas Locales:</strong> Plantas nativas de Bolivia
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Proceso Tradicional:</strong> Métodos ancestrales de extracción
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Propiedades Medicinales:</strong> Beneficios terapéuticos naturales
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Sabores Únicos:</strong> Perfiles de sabor auténticos
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="text-success mb-3">🌱 Tipos de Extractos</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    • <strong>Coca:</strong> Energía natural y digestión
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Muña:</strong> Propiedades digestivas
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Cedrón:</strong> Relajante y calmante
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Manzanilla:</strong> Antiinflamatorio natural
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Eucalipto:</strong> Respiratorio y refrescante
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-success mb-3">🌿 Beneficios Terapéuticos</h5>
+                <div class="bg-light p-3 rounded">
+                  <p class="mb-2">• Mejora la digestión</p>
+                  <p class="mb-2">• Propiedades relajantes</p>
+                  <p class="mb-2">• Fortalece el sistema respiratorio</p>
+                  <p class="mb-2">• Antiinflamatorio natural</p>
+                  <p class="mb-2">• Antioxidantes naturales</p>
+                  <p class="mb-0">• Adaptación a la altura</p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-12">
+                <h5 class="text-success mb-3">🍵 Formas de Uso</h5>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🍵</div>
+                      <h6>Infusiones</h6>
+                      <small class="text-muted">Tés y bebidas calientes</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">💊</div>
+                      <h6>Gotas Medicinales</h6>
+                      <small class="text-muted">Uso terapéutico directo</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🥤</div>
+                      <h6>Bebidas Frías</h6>
+                      <small class="text-muted">Refrescos naturales</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-success"><i class="bi bi-whatsapp me-2"></i>Consultar Precio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- MODAL DETALLES PRODUCTOS ORGÁNICOS -->
+    <div class="modal fade" id="modalOrganicos" tabindex="-1" aria-labelledby="modalOrganicosLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+          <div class="modal-header bg-info text-white">
+            <h5 class="modal-title fw-bold" id="modalOrganicosLabel"><span class="me-2" style="font-size: 1.5em;">🌱</span>Productos Orgánicos - Detalles Completos</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="text-center mb-4">
+                  <div style="font-size: 8rem; line-height: 1;">🌱</div>
+                  <h4 class="text-info fw-bold">Línea Orgánica Certificada</h4>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-info mb-3">✨ Características Principales</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Certificación Orgánica:</strong> Avalado por organismos internacionales
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Libre de Químicos:</strong> Sin pesticidas ni fertilizantes sintéticos
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Sostenible:</strong> Prácticas amigables con el medio ambiente
+                  </li>
+                  <li class="mb-2">
+                    <i class="bi bi-check-circle-fill text-success me-2"></i><strong>Eco-Friendly:</strong> Empaques biodegradables
+                  </li>
+                </ul>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-md-6">
+                <h5 class="text-info mb-3">🌿 Productos Orgánicos</h5>
+                <ul class="list-unstyled">
+                  <li class="mb-2">
+                    • <strong>Miel Orgánica:</strong> De abejas en áreas protegidas
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Polen Orgánico:</strong> Recolectado naturalmente
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Propóleo Orgánico:</strong> Propiedades antimicrobianas
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Jalea Real Orgánica:</strong> Nutrición premium
+                  </li>
+                  <li class="mb-2">
+                    • <strong>Cera de Abeja Orgánica:</strong> Para cosméticos naturales
+                  </li>
+                </ul>
+              </div>
+              <div class="col-md-6">
+                <h5 class="text-info mb-3">🌍 Beneficios Ambientales</h5>
+                <div class="bg-light p-3 rounded">
+                  <p class="mb-2">• Protección de la biodiversidad</p>
+                  <p class="mb-2">• Conservación del suelo</p>
+                  <p class="mb-2">• Reducción de contaminación</p>
+                  <p class="mb-2">• Uso eficiente del agua</p>
+                  <p class="mb-2">• Energía renovable</p>
+                  <p class="mb-0">• Empaques sostenibles</p>
+                </div>
+              </div>
+            </div>
+
+            <hr class="my-4" />
+
+            <div class="row">
+              <div class="col-12">
+                <h5 class="text-info mb-3">🏅 Certificaciones</h5>
+                <div class="row g-3">
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🏅</div>
+                      <h6>Orgánico Internacional</h6>
+                      <small class="text-muted">Certificación USDA Organic</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">🌍</div>
+                      <h6>Comercio Justo</h6>
+                      <small class="text-muted">Fair Trade Certified</small>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="text-center p-3 bg-light rounded">
+                      <div class="mb-2" style="font-size: 2rem;">♾️</div>
+                      <h6>Sostenibilidad</h6>
+                      <small class="text-muted">Rainforest Alliance</small>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+            <button type="button" class="btn btn-info"><i class="bi bi-whatsapp me-2"></i>Consultar Precio</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SCRIPT JAVASCRIPT EXTERNO -->
+    <!-- Funcionalidad de navegación suave entre secciones -->
+    <script src="static/js/components/dropdown-hover.js"></script>
+    <script src="static/js/utils/script.js"></script>
+    <script src="static/js/components/bootstrap-interactions.js"></script>
+    
+    <style>
+      /* Animaciones para las tarjetas 2x2 */
+      .card:hover {
+        transform: translateY(-10px) scale(1.05);
+        box-shadow: 0 15px 35px rgba(0,0,0,0.2) !important;
+      }
+      .card:hover i {
+        transform: scale(1.2) rotate(5deg);
+      }
+      
+      /* Enjambre de abejas para el segundo panal */
+      .bee-swarm-productos {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        pointer-events: none;
+        z-index: 10;
+      }
+      
+      .swarm-bee-prod {
+        position: absolute;
+        font-size: 1.2rem;
+        animation: swarmFloat 4s ease-in-out infinite;
+      }
+      
+      .bee-prod-1 { top: 15%; left: 20%; animation-delay: 0s; animation-duration: 3.5s; }
+      .bee-prod-2 { top: 25%; left: 70%; animation-delay: 0.5s; animation-duration: 4s; }
+      .bee-prod-3 { top: 40%; left: 15%; animation-delay: 1s; animation-duration: 3.8s; }
+      .bee-prod-4 { top: 50%; left: 75%; animation-delay: 1.5s; animation-duration: 4.2s; }
+      .bee-prod-5 { top: 65%; left: 25%; animation-delay: 2s; animation-duration: 3.6s; }
+      .bee-prod-6 { top: 75%; left: 65%; animation-delay: 2.5s; animation-duration: 4.1s; }
+      .bee-prod-7 { top: 35%; left: 50%; animation-delay: 3s; animation-duration: 3.9s; }
+      .bee-prod-8 { top: 55%; left: 45%; animation-delay: 3.5s; animation-duration: 3.7s; }
+      
+      @keyframes swarmFloat {
+        0%, 100% { transform: translate(0, 0) rotate(0deg); }
+        25% { transform: translate(10px, -15px) rotate(5deg); }
+        50% { transform: translate(-8px, -25px) rotate(-5deg); }
+        75% { transform: translate(12px, -10px) rotate(3deg); }
+      }
+    </style>
+  </body>
+</html>

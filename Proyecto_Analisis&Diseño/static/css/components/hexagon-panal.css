@@ -1,0 +1,112 @@
+/* Hexágonos reales tipo panal */
+.honeycomb-container {
+    display: flex;
+    justify-content: center;
+    margin: 50px 0;
+}
+
+.honeycomb-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    max-width: 600px;
+}
+
+.hexagon-info {
+    width: 150px;
+    height: 130px;
+    position: relative;
+    margin: 0 5px 20px;
+}
+
+.hexagon-inner {
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, rgba(255,193,7,0.9) 0%, rgba(255,152,0,0.8) 100%);
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.3s ease;
+    border: 3px solid #FFD700;
+    box-shadow: 0 8px 20px rgba(255,193,7,0.3);
+}
+
+.hexagon-info:hover .hexagon-inner {
+    transform: scale(1.1);
+    background: linear-gradient(135deg, #FFC107 0%, #FF8F00 100%);
+    box-shadow: 0 15px 30px rgba(255,193,7,0.6);
+}
+
+.hexagon-content-info {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    padding: 15px;
+    width: 120px;
+}
+
+.hexagon-content-info i {
+    font-size: 2rem;
+    color: #8B4513;
+    margin-bottom: 8px;
+    filter: drop-shadow(0 2px 4px rgba(0,0,0,0.3));
+}
+
+.hexagon-content-info h4 {
+    color: #8B4513;
+    font-size: 0.9rem;
+    margin-bottom: 6px;
+    font-weight: 700;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+.hexagon-content-info p {
+    color: #654321;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    margin: 0;
+    font-weight: 600;
+}
+
+/* Patrón de panal - posicionamiento alternado */
+.hexagon-info:nth-child(2) {
+    margin-top: 40px;
+}
+
+/* Responsive para hexágonos */
+@media (max-width: 768px) {
+    .honeycomb-grid {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .hexagon-info {
+        width: 130px;
+        height: 110px;
+        margin: 10px 0;
+    }
+    
+    .hexagon-info:nth-child(2) {
+        margin-top: 10px;
+    }
+    
+    .hexagon-content-info {
+        width: 100px;
+        padding: 10px;
+    }
+    
+    .hexagon-content-info i {
+        font-size: 1.5rem;
+    }
+    
+    .hexagon-content-info h4 {
+        font-size: 0.8rem;
+    }
+    
+    .hexagon-content-info p {
+        font-size: 0.65rem;
+    }
+}

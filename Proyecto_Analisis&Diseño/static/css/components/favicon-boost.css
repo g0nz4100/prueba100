@@ -1,0 +1,12 @@
+/* Forzar favicon más grande en navegadores */
+link[rel="icon"] {
+    width: 64px !important;
+    height: 64px !important;
+}
+
+/* Mejorar visibilidad del favicon en pestañas */
+head link[rel="icon"] {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: pixelated;
+}

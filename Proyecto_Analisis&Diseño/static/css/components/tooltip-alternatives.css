@@ -1,0 +1,225 @@
+/* ========================================
+   ALTERNATIVAS DE TOOLTIPS PARA NAVBAR
+   ======================================== */
+
+/* OPCIÓN 1: Tooltip con Globo de Diálogo */
+.tooltip-bubble .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-bubble .hexagon-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: #FFD700;
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    z-index: 1000;
+}
+
+.tooltip-bubble .hexagon-btn::after {
+    content: '';
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    width: 0;
+    height: 0;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-top: 8px solid #FFD700;
+    opacity: 0;
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.tooltip-bubble .hexagon-btn:hover::before,
+.tooltip-bubble .hexagon-btn:hover::after {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* OPCIÓN 2: Tooltip Lateral Deslizante */
+.tooltip-slide .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-slide .hexagon-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    transform: translateY(-50%) translateX(20px);
+    background: linear-gradient(135deg, #FFD700, #FF8F00);
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.4s ease;
+    margin-right: 10px;
+    box-shadow: 0 4px 12px rgba(255,140,0,0.3);
+    z-index: 1000;
+}
+
+.tooltip-slide .hexagon-btn:hover::before {
+    transform: translateY(-50%) translateX(0);
+    opacity: 1;
+}
+
+/* OPCIÓN 3: Tooltip con Animación de Escritura */
+.tooltip-typewriter .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-typewriter .hexagon-btn::before {
+    content: '';
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FFD700;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    z-index: 1000;
+    overflow: hidden;
+    width: 0;
+}
+
+.tooltip-typewriter .hexagon-btn:hover::before {
+    opacity: 1;
+    animation: typewriter 1s steps(20) forwards;
+}
+
+@keyframes typewriter {
+    0% { width: 0; }
+    100% { width: auto; }
+}
+
+/* OPCIÓN 4: Tooltip con Efecto de Neón */
+.tooltip-neon .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-neon .hexagon-btn::before {
+    content: attr(data-tooltip);
+    position: absolute;
+    top: -45px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: rgba(255, 215, 0, 0.9);
+    color: #333;
+    padding: 10px 15px;
+    border-radius: 10px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 
+        0 0 10px #FFD700,
+        0 0 20px #FFD700,
+        0 0 30px #FFD700;
+    z-index: 1000;
+}
+
+.tooltip-neon .hexagon-btn:hover::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+    animation: neonPulse 2s ease-in-out infinite;
+}
+
+@keyframes neonPulse {
+    0%, 100% {
+        box-shadow: 
+            0 0 10px #FFD700,
+            0 0 20px #FFD700,
+            0 0 30px #FFD700;
+    }
+    50% {
+        box-shadow: 
+            0 0 15px #FFD700,
+            0 0 25px #FFD700,
+            0 0 35px #FFD700,
+            0 0 45px #FFD700;
+    }
+}
+
+/* OPCIÓN 5: Tooltip con Información Detallada */
+.tooltip-detailed .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-detailed .hexagon-btn::before {
+    content: attr(data-tooltip) '\A' attr(data-description);
+    position: absolute;
+    top: -70px;
+    left: 50%;
+    transform: translateX(-50%) scale(0);
+    background: linear-gradient(135deg, #FFD700, #FF8F00);
+    color: #333;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 11px;
+    font-weight: 600;
+    white-space: pre-line;
+    text-align: center;
+    opacity: 0;
+    transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    box-shadow: 0 8px 25px rgba(255,140,0,0.4);
+    border: 2px solid rgba(255,255,255,0.3);
+    min-width: 150px;
+    z-index: 1000;
+}
+
+.tooltip-detailed .hexagon-btn:hover::before {
+    transform: translateX(-50%) scale(1);
+    opacity: 1;
+}
+
+/* OPCIÓN 6: Tooltip con Icono y Texto */
+.tooltip-icon .hexagon-btn {
+    position: relative;
+}
+
+.tooltip-icon .hexagon-btn::before {
+    content: attr(data-icon) ' ' attr(data-tooltip);
+    position: absolute;
+    top: -40px;
+    left: 50%;
+    transform: translateX(-50%) translateY(10px);
+    background: #FFD700;
+    color: #333;
+    padding: 8px 12px;
+    border-radius: 20px;
+    font-size: 12px;
+    font-weight: 600;
+    white-space: nowrap;
+    opacity: 0;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255,140,0,0.3);
+    z-index: 1000;
+}
+
+.tooltip-icon .hexagon-btn:hover::before {
+    transform: translateX(-50%) translateY(0);
+    opacity: 1;
+}

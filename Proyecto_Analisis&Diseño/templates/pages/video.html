@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Demostrativo - Melimel</title>
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="64x64">
+    <link rel="apple-touch-icon" href="../../static/img/icons/favicon.png" sizes="180x180">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../static/css/global/styles.css">
+    <link rel="stylesheet" href="../../static/css/global/bootstrap-custom.css">
+    <link rel="stylesheet" href="../../static/css/components/favicon-boost.css">
+    <link rel="stylesheet" href="../../static/css/pages/acerca.css">
+    <link rel="stylesheet" href="../../static/css/pages/video.css">
+</head>
+<body>
+    <!-- ELEMENTOS DECORATIVOS DE FONDO -->
+    <div class="flower" style="bottom: 10%; left: 5%;">🌸</div>
+    <div class="flower" style="bottom: 15%; left: 15%;">🌺</div>
+    <div class="flower" style="bottom: 8%; right: 10%;">🌼</div>
+    <div class="flower" style="bottom: 20%; right: 20%;">🌻</div>
+    <div class="flower" style="top: 60%; left: 8%;">🌷</div>
+    <div class="flower" style="top: 65%; right: 12%;">🌹</div>
+
+    <!-- ABEJAS ANIMADAS -->
+    <div class="bee-container" style="animation-duration: 18s; animation-delay: 0s;">
+        <div class="bee-wings">
+            <div class="wing left"></div>
+            <div class="wing right"></div>
+        </div>
+        <div class="bee-body">🐝</div>
+    </div>
+
+    <div class="bee-container" style="animation-duration: 22s; animation-delay: 3s; top: 40%;">
+        <div class="bee-wings">
+            <div class="wing left"></div>
+            <div class="wing right"></div>
+        </div>
+        <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: linear-gradient(135deg, #FFC107 0%, #FFB74D 100%); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+                <img src="https://www.melimel.com.bo/wp-content/uploads/logo-meli_Mesa-de-trabajo-1.png" 
+                     alt="Melimel Logo" height="60" class="me-3 rounded-3">
+                <div>
+                    <h4 class="mb-0 text-white fw-bold">Melimel</h4>
+                    <small class="text-white-50">Vivir con gusto</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="hexagon-nav ms-auto d-flex flex-wrap justify-content-end align-items-center">
+                    <a class="hexagon-btn" href="../../index.html#inicio">
+                        <div class="hexagon-content">
+                            <i class="bi bi-house-fill hex-icon"></i>
+                            <span class="hex-text">inicio</span>
+                        </div>
+                    </a>
+                    <div class="hexagon-dropdown">
+                        <a class="hexagon-btn" href="marco-teorico.html">
+                            <div class="hexagon-content">
+                                <i class="bi bi-book-fill hex-icon"></i>
+                                <span class="hex-text">marco teórico</span>
+                            </div>
+                        </a>
+                        <div class="hexagon-dropdown-content">
+                            <a href="marco-teorico.html#introduccion">Introducción</a>
+                            <a href="marco-teorico.html#antecedentes">Antecedentes</a>
+                            <a href="marco-teorico.html#planteamiento">Planteamiento del Problema</a>
+                            <a href="marco-teorico.html#arbol-problemas">Árbol de Problemas</a>
+                            <a href="marco-teorico.html#formulacion">Formulación del Problema</a>
+                            <a href="marco-teorico.html#objetivos">Objetivos</a>
+                            <a href="marco-teorico.html#metodologia">Metodología</a>
+                            <a href="marco-teorico.html#planificacion">Plan de Actividades</a>
+                        </div>
+                    </div>
+                    <a class="hexagon-btn" href="../../index.html#analisis">
+                        <div class="hexagon-content">
+                            <i class="bi bi-diagram-3-fill hex-icon"></i>
+                            <span class="hex-text">análisis</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#objetos">
+                        <div class="hexagon-content">
+                            <i class="bi bi-boxes hex-icon"></i>
+                            <span class="hex-text">objetos</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#diagrama">
+                        <div class="hexagon-content">
+                            <i class="bi bi-diagram-2-fill hex-icon"></i>
+                            <span class="hex-text">diagrama</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn active" href="#video">
+                        <div class="hexagon-content">
+                            <i class="bi bi-play-circle-fill hex-icon"></i>
+                            <span class="hex-text">video</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#contacto">
+                        <div class="hexagon-content">
+                            <i class="bi bi-telephone-fill hex-icon"></i>
+                            <span class="hex-text">contacto</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="acerca.html">
+                        <div class="hexagon-content">
+                            <i class="bi bi-people-fill hex-icon"></i>
+                            <span class="hex-text">acerca de nosotros</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <section id="video" class="py-5" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%); min-height: 100vh; position: relative; overflow: hidden;">
+        <!-- Partículas de fondo -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container position-relative">
+            <!-- Hero Section -->
+            <div class="hero-section text-center mb-5">
+                <div class="hero-badge mb-4">
+                    <span class="badge-text">VIDEO DEMOSTRATIVO</span>
+                </div>
+                <h1 class="hero-title mb-4">
+                    <span class="gradient-text">🎥 Melimel en Acción</span>
+                </h1>
+                <p class="hero-subtitle mb-4">Descubre nuestro proceso artesanal • Calidad Premium • Tradición Boliviana</p>
+                <div class="hero-divider"></div>
+            </div>
+
+            <!-- Video Principal -->
+            <div class="video-main-container mb-5">
+                <div class="video-wrapper">
+                    <!-- Video de YouTube con API -->
+                    <div class="video-embed-container">
+                        <div id="player"></div>
+                    </div>
+                    
+                    <!-- Información del Video -->
+                    <div class="video-info-embed mt-4">
+                        <h4 class="text-white mb-3">🎥 Video Demostrativo de Melimel</h4>
+                        <p class="text-white-50">Conoce nuestro proceso de producción artesanal de miel premium boliviana</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER COMÚN -->
+    <footer id="contacto">
+      <div class="footer-content">
+        <div class="footer-section">
+          <h3>🍯 Melimel</h3>
+          <p>"Vivir con gusto" - La dulzura natural de nuestras abejas</p>
+          <div class="contact-person">
+            <h4>📞 Contáctanos</h4>
+            <p>📱 WhatsApp: +591 73659001</p>
+            <p>✉️ contacto@melimel.com.bo</p>
+            <p>🌐 www.melimel.com.bo</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>🏢 Nuestra Empresa</h3>
+          <p>Especialistas en productos apícolas de calidad premium</p>
+          <div class="contact-person">
+            <h4>Melimel Bolivia</h4>
+            <p>🏆 Fundada en 2009</p>
+            <p>🌍 Ubicación: Bolivia</p>
+            <p>🍯 Miel Artesanal y Productos Naturales</p>
+            <p>🌱 Certificaciones Orgánico Internacional</p>
+            <p>💛 Misión: Vivir con gusto naturalmente</p>
+          </div>
+        </div>
+        <div class="footer-section">
+          <h3>🌐 Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">💼</a>
+            <a href="#" class="social-icon">🎵</a>
+          </div>
+          <div style="margin-top: 20px;">
+            <p><strong>Productos:</strong></p>
+            <p>🍯 Miel Pura • 🌿 Extractos Naturales</p>
+            <p>🌱 Productos Orgánicos • 🏆 Calidad Premium</p>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        © Copyright 2024 Melimel Bolivia - Todos los derechos reservados<br />
+        "Vivir con gusto" - Diseñado con 💛 para los amantes de la miel natural
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../../static/js/utils/script.js"></script>
+    <script src="../../static/js/components/dropdown-hover.js"></script>
+    <script src="../../static/js/components/bootstrap-interactions.js"></script>
+    <script src="../../static/js/pages/video.js"></script>
+    
+    <script>
+      var tag = document.createElement('script');
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '100%',
+          width: '100%',
+          videoId: '55K5wMVXR0Q',
+          playerVars: {
+            'playsinline': 1,
+            'start': 2
+          },
+          events: {
+            'onReady': onPlayerReady
+          }
+        });
+      }
+
+      function onPlayerReady(event) {
+        // El video está listo para reproducir
+      }
+    </script>
+</body>
+</html>

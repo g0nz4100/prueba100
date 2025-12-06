@@ -1,0 +1,678 @@
+/* ========================================
+   ESTILOS GLOBALES Y RESET CSS
+   ======================================== */
+/* Reset básico para eliminar márgenes y padding por defecto del navegador */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Configuración del cuerpo principal de la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(135deg, #FFD54F 0%, #FFECB3 50%, #FFF9E6 100%);
+    position: relative;
+    overflow-x: hidden;
+    min-height: 100vh;
+}
+
+/* ========================================
+   ELEMENTOS DECORATIVOS DE FONDO
+   ======================================== */
+/* Flores decorativas que aparecen fijas en diferentes posiciones de la pantalla */
+.flower {
+    position: fixed;        /* Posición fija respecto al viewport */
+    font-size: 40px;       /* Tamaño del emoji de la flor */
+    z-index: 1;            /* Nivel de profundidad bajo para que esté detrás del contenido */
+    animation: sway 3s ease-in-out infinite;  /* Animación de balanceo suave */
+}
+
+/* Animación de balanceo para las flores decorativas */
+@keyframes sway {
+    0%, 100% { transform: rotate(-5deg); }  /* Rotación hacia la izquierda */
+    50% { transform: rotate(5deg); }        /* Rotación hacia la derecha */
+}
+
+/* ========================================
+   ABEJAS ANIMADAS CON ALAS
+   ======================================== */
+/* Contenedor principal de cada abeja que vuela por la pantalla */
+.bee-container {
+    position: fixed;                        /* Posición fija para que vuele por toda la pantalla */
+    z-index: 2;                            /* Nivel superior a las flores pero inferior al contenido */
+    animation: flyPath 20s infinite linear; /* Animación de vuelo en línea recta */
+}
+
+/* Cuerpo de la abeja (emoji) con animación de rebote */
+.bee-body {
+    display: inline-block;
+    font-size: 28px;                       /* Tamaño del emoji de la abeja */
+    position: relative;
+    animation: bounce 0.5s ease-in-out infinite;  /* Rebote vertical suave */
+}
+
+/* Contenedor de las alas de la abeja */
+.bee-wings {
+    position: absolute;
+    top: -8px;                             /* Posicionadas arriba del cuerpo */
+    left: 50%;
+    transform: translateX(-50%);           /* Centradas horizontalmente */
+    display: flex;
+    gap: 2px;                              /* Espacio entre las dos alas */
+}
+
+/* Estilos individuales de cada ala */
+.wing {
+    width: 12px;
+    height: 18px;
+    background: rgba(255, 255, 255, 0.6);  /* Color semi-transparente */
+    border-radius: 50% 50% 50% 0;          /* Forma ovalada del ala */
+    animation: flapWings 0.1s ease-in-out infinite;  /* Aleteo rápido */
+}
+
+/* Ala izquierda con punto de rotación en la esquina inferior derecha */
+.wing.left {
+    transform-origin: bottom right;
+    animation-delay: 0.05s;                /* Ligero desfase en la animación */
+}
+
+/* Ala derecha espejada horizontalmente */
+.wing.right {
+    transform-origin: bottom left;
+    transform: scaleX(-1);                 /* Espejo horizontal para crear simetría */
+}
+
+/* Animación de aleteo de las alas */
+@keyframes flapWings {
+    0%, 100% { transform: rotate(-20deg); }  /* Alas hacia abajo */
+    50% { transform: rotate(20deg); }        /* Alas hacia arriba */
+}
+
+/* Animación de rebote vertical del cuerpo de la abeja */
+@keyframes bounce {
+    0%, 100% { transform: translateY(0px); }   /* Posición normal */
+    50% { transform: translateY(-5px); }       /* Subida ligera */
+}
+
+/* Ruta de vuelo de las abejas de izquierda a derecha con variaciones de altura */
+@keyframes flyPath {
+    0% { left: -100px; top: 10%; }    /* Inicia fuera de la pantalla por la izquierda */
+    15% { left: 20%; top: 20%; }      /* Primera curva hacia arriba */
+    30% { left: 40%; top: 15%; }      /* Baja ligeramente */
+    45% { left: 60%; top: 25%; }      /* Sube nuevamente */
+    60% { left: 80%; top: 18%; }      /* Baja un poco */
+    75% { left: 90%; top: 22%; }      /* Última subida */
+    100% { left: 110%; top: 10%; }    /* Sale por la derecha */
+}
+
+/* ========================================
+   HEADER Y NAVEGACIÓN PRINCIPAL
+   ======================================== */
+/* Encabezado principal de la página */
+header {
+    background: linear-gradient(to bottom, #FFC700);  /* Fondo dorado degradado */
+    padding: 0;
+    position: relative;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);          /* Sombra para profundidad */
+    z-index: 100;                                     /* Alto nivel para estar sobre otros elementos */
+}
+
+/* Contenedor del contenido del header */
+.header-content {
+    max-width: 1400px;                    /* Ancho máximo responsivo */
+    margin: 0 auto;                       /* Centrado horizontal */
+    display: flex;
+    align-items: center;
+    justify-content: space-between;       /* Logo a la izquierda, menú a la derecha */
+    padding: 15px 30px;
+    position: relative;
+}
+
+/* Contenedor del logo de la empresa */
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 15px;                           /* Espacio entre logo y texto */
+    z-index: 101;                        /* Nivel superior para interacciones */
+}
+
+/* Contenedor del logo de la empresa Melimel */
+.logo {
+    width: 190px;                        /* Ancho fijo del contenedor */
+    height: 140px;                       /* Alto fijo del contenedor */
+    background: transparent;
+    border-radius: 15px;                 /* Bordes redondeados */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* box-shadow: 0 4px 15px rgba(0,0,0,0.2); */  /* Sombra opcional comentada */
+    overflow: hidden;                    /* Oculta partes de imagen que excedan el contenedor */
+}
+
+/* Imagen del logo con ajuste de tamaño */
+.logo img {
+    width: 150%;                         /* Escala aumentada para mejor visualización */
+    height: 100%;
+    object-fit: cover;                   /* Mantiene proporción y recorta si es necesario */
+}
+
+/* ========================================
+   MENÚ DE NAVEGACIÓN HEXAGONAL
+   ======================================== */
+/* Contenedor principal del menú de navegación con botones hexagonales */
+nav {
+    display: flex;
+    gap: 8px;                           /* Espacio entre botones hexagonales */
+    align-items: center;
+    z-index: 101;                       /* Alto nivel para interacciones */
+    flex-wrap: wrap;                    /* Permite que se ajusten en pantallas pequeñas */
+    justify-content: center;
+}
+
+/* Botones hexagonales tipo panal */
+.nav-item {
+    position: relative;
+    display: inline-block;
+    width: 100px;
+    height: 86px;
+    margin: 0 5px;
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    font-size: 12px;
+    text-align: center;
+    line-height: 86px;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nav-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, #FFB74D 0%, #FFA726 50%, #FF9800 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(255,152,0,0.3);
+}
+
+.nav-item::after {
+    content: '';
+    position: absolute;
+    top: 3px;
+    left: 3px;
+    width: calc(100% - 6px);
+    height: calc(100% - 6px);
+    background: linear-gradient(135deg, #FFD54F 0%, #FFCC02 50%, #FFC107 100%);
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    transition: all 0.3s ease;
+    z-index: -1;
+}
+
+.nav-item span {
+    position: relative;
+    z-index: 2;
+    display: block;
+    padding: 20px 8px;
+    line-height: 1.2;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.3);
+}
+
+.nav-item:hover::before {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px rgba(255,152,0,0.5);
+    background: linear-gradient(135deg, #FF9800 0%, #FF8F00 50%, #FF6F00 100%);
+}
+
+.nav-item:hover::after {
+    background: linear-gradient(135deg, #FFEB3B 0%, #FFD600 50%, #FFC107 100%);
+    transform: scale(1.05);
+}
+
+.nav-item:hover {
+    transform: translateY(-3px);
+}
+
+.nav-item:hover span {
+    color: #fff;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #FF8F00;
+    min-width: 220px;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    z-index: 200;
+    margin-top: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content a {
+    color: white;
+    padding: 15px 20px;
+    text-decoration: none;
+    display: block;
+    transition: background 0.3s;
+}
+
+.dropdown-content a:hover {
+    background: rgba(255,255,255,0.2);
+}
+
+/* Contenido principal */
+main {
+    max-width: 1400px;
+    margin: 50px auto;
+    padding: 40px;
+    background: rgba(255,255,255,0.95);
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.2);
+    position: relative;
+    z-index: 10;
+}
+
+h1 {
+    color: #FF6F00;
+    text-align: center;
+    font-size: 48px;
+    margin-bottom: 30px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+}
+
+/* Diseño de panal hexagonal mejorado */
+.honeycomb-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 60px 0;
+    position: relative;
+}
+
+.honeycomb {
+    display: grid;
+    grid-template-columns: repeat(4, 120px);
+    gap: 8px;
+    position: relative;
+}
+
+.hex {
+    width: 120px;
+    height: 104px;
+    position: relative;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #FFA726 0%, #FFB74D 50%, #FFC107 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease;
+    cursor: pointer;
+    box-shadow: inset 0 0 20px rgba(255,152,0,0.3), 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.hex::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 85%;
+    height: 85%;
+    clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+    background: linear-gradient(135deg, #FFD54F, #FFECB3);
+    z-index: 1;
+}
+
+.hex-content {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: #FF6F00;
+    font-weight: bold;
+    font-size: 13px;
+    padding: 10px;
+    text-shadow: 1px 1px 2px rgba(255,255,255,0.5);
+}
+
+.hex:hover {
+    transform: scale(1.15) rotate(5deg);
+    box-shadow: inset 0 0 30px rgba(255,152,0,0.5), 0 8px 25px rgba(0,0,0,0.3);
+}
+
+/* Sección de inicio elegante */
+.hero-section {
+    max-width: 1400px;
+    margin: 30px auto;
+    padding: 80px 40px;
+    background: linear-gradient(135deg, rgba(255,255,255,0.98) 0%, rgba(255,248,225,0.95) 100%);
+    border-radius: 25px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+    position: relative;
+    z-index: 10;
+    text-align: center;
+    backdrop-filter: blur(10px);
+}
+
+.hero-title {
+    color: #FF6F00;
+    font-size: 64px;
+    margin-bottom: 25px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.1);
+    font-weight: 700;
+    letter-spacing: -1px;
+}
+
+.hero-subtitle {
+    color: #666;
+    font-size: 28px;
+    margin-bottom: 50px;
+    font-style: italic;
+    font-weight: 300;
+}
+
+/* Diseño elegante con círculos dorados */
+.elegant-display {
+    position: relative;
+    width: 500px;
+    height: 300px;
+    margin: 50px auto;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.golden-circle {
+    position: absolute;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #FFD700 0%, #FFA500 50%, #FF8C00 100%);
+    box-shadow: 0 10px 30px rgba(255,140,0,0.3);
+    animation: float 4s ease-in-out infinite;
+}
+
+.circle-large {
+    width: 200px;
+    height: 200px;
+    opacity: 0.8;
+}
+
+.circle-medium {
+    width: 120px;
+    height: 120px;
+    top: -20px;
+    right: 50px;
+    animation-delay: 1s;
+    opacity: 0.6;
+}
+
+.circle-small {
+    width: 80px;
+    height: 80px;
+    bottom: 20px;
+    left: 30px;
+    animation-delay: 2s;
+    opacity: 0.7;
+}
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px) scale(1); }
+    50% { transform: translateY(-20px) scale(1.05); }
+}
+
+/* Abejas elegantes */
+.elegant-bee {
+    position: absolute;
+    font-size: 32px;
+    z-index: 15;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.2));
+}
+
+.elegant-bee:nth-child(1) {
+    animation: elegantFly1 8s infinite ease-in-out;
+}
+
+.elegant-bee:nth-child(2) {
+    animation: elegantFly2 10s infinite ease-in-out;
+    animation-delay: 2s;
+}
+
+.elegant-bee:nth-child(3) {
+    animation: elegantFly3 12s infinite ease-in-out;
+    animation-delay: 4s;
+}
+
+@keyframes elegantFly1 {
+    0%, 100% { left: 100px; top: 100px; transform: rotate(0deg); }
+    25% { left: 300px; top: 80px; transform: rotate(90deg); }
+    50% { left: 350px; top: 200px; transform: rotate(180deg); }
+    75% { left: 150px; top: 220px; transform: rotate(270deg); }
+}
+
+@keyframes elegantFly2 {
+    0%, 100% { left: 400px; top: 150px; transform: rotate(0deg); }
+    25% { left: 200px; top: 50px; transform: rotate(-90deg); }
+    50% { left: 50px; top: 180px; transform: rotate(180deg); }
+    75% { left: 300px; top: 250px; transform: rotate(90deg); }
+}
+
+@keyframes elegantFly3 {
+    0%, 100% { left: 250px; top: 50px; transform: rotate(0deg); }
+    25% { left: 450px; top: 120px; transform: rotate(120deg); }
+    50% { left: 200px; top: 280px; transform: rotate(240deg); }
+    75% { left: 80px; top: 100px; transform: rotate(300deg); }
+}
+
+/* Botón elegante */
+.hero-button {
+    display: inline-block;
+    padding: 18px 40px;
+    background: linear-gradient(135deg, #FF8C00 0%, #FF6F00 100%);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+    box-shadow: 0 8px 25px rgba(255,111,0,0.3);
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.hero-button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 35px rgba(255,111,0,0.4);
+    background: linear-gradient(135deg, #FF6F00 0%, #FF5722 100%);
+}
+
+.hex:nth-child(2), .hex:nth-child(4) {
+    margin-top: 56px;
+}
+
+.hex:nth-child(6), .hex:nth-child(8) {
+    margin-top: 56px;
+}
+
+/* Efecto de miel goteando */
+.honey-drip {
+    position: absolute;
+    bottom: -20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 20px;
+    height: 30px;
+    background: linear-gradient(to bottom, transparent, #FFC107);
+    border-radius: 0 0 50% 50%;
+    animation: drip 3s ease-in-out infinite;
+}
+
+@keyframes drip {
+    0%, 100% { height: 30px; opacity: 1; }
+    50% { height: 45px; opacity: 0.7; }
+}
+
+.description {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    line-height: 1.8;
+    margin: 40px 0;
+    padding: 30px;
+    background: rgba(255,193,7,0.1);
+    border-radius: 15px;
+    border-left: 5px solid #FFC107;
+}
+
+/* Footer */
+footer {
+    background: #212121;
+    color: white;
+    padding: 60px 30px 30px;
+    position: relative;
+    z-index: 10;
+}
+
+.footer-content {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 50px;
+    margin-bottom: 40px;
+}
+
+.footer-section h3 {
+    color: #FFC107;
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+.contact-person {
+    background: rgba(255,193,7,0.1);
+    padding: 15px;
+    margin: 10px 0;
+    border-radius: 10px;
+    border-left: 4px solid #FFC107;
+    transition: transform 0.3s;
+}
+
+.contact-person:hover {
+    transform: translateX(10px);
+    background: rgba(255,193,7,0.15);
+}
+
+.contact-person h4 {
+    color: #FFD54F;
+    margin-bottom: 5px;
+}
+
+.contact-person p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icon {
+    width: 45px;
+    height: 45px;
+    background: #FFC107;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #212121;
+    text-decoration: none;
+    font-size: 20px;
+    transition: all 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2) rotate(360deg);
+    background: #FFD54F;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 30px;
+    border-top: 1px solid rgba(255,193,7,0.3);
+    font-size: 14px;
+}
+
+.footer-bottom a {
+    color: #FFC107;
+    text-decoration: none;
+}
+
+.newsletter {
+    background: rgba(255,193,7,0.1);
+    padding: 20px;
+    border-radius: 10px;
+}
+
+.newsletter input {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    background: rgba(255,255,255,0.9);
+}
+
+.newsletter button {
+    width: 100%;
+    padding: 12px;
+    background: #FFC107;
+    border: none;
+    border-radius: 5px;
+    color: #212121;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.newsletter button:hover {
+    background: #FFD54F;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(255,193,7,0.5);
+}
+
+@media (max-width: 768px) {
+    nav {
+        gap: 8px;
+    }
+    
+    .nav-item {
+        font-size: 13px;
+        padding: 10px 15px;
+    }
+
+    .honeycomb {
+        grid-template-columns: repeat(2, 100px);
+    }
+
+    .hex {
+        width: 100px;
+        height: 87px;
+    }
+}

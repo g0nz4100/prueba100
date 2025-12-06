@@ -1,0 +1,303 @@
+/* ESTILOS ESPECÍFICOS PARA MARCO TEÓRICO */
+#marco-teorico {
+    background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+    min-height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.particles {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.particle {
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    background: rgba(255,193,7,0.6);
+    border-radius: 50%;
+    animation: float 6s ease-in-out infinite;
+}
+
+.particle:nth-child(1) { top: 20%; left: 20%; animation-delay: 0s; }
+.particle:nth-child(2) { top: 60%; left: 80%; animation-delay: 2s; }
+.particle:nth-child(3) { top: 40%; left: 40%; animation-delay: 4s; }
+.particle:nth-child(4) { top: 80%; left: 60%; animation-delay: 1s; }
+.particle:nth-child(5) { top: 10%; left: 90%; animation-delay: 3s; }
+
+@keyframes float {
+    0%, 100% { transform: translateY(0px); opacity: 0.6; }
+    50% { transform: translateY(-20px); opacity: 1; }
+}
+
+/* BOTÓN ATRÁS */
+.back-button {
+    position: fixed;
+    left: 110px;
+    top: 140px;
+    z-index: 1001;
+    background: linear-gradient(135deg, #FFC107 0%, #FFD54F 100%);
+    border: none;
+    color: #000000;
+    font-weight: 700;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255,193,7,0.4);
+    transition: all 0.3s ease;
+    border-radius: 50%;
+    width: 55px;
+    height: 55px;
+}
+
+.back-button:hover {
+    transform: translateX(-5px) scale(1.05);
+    box-shadow: 0 6px 20px rgba(255,193,7,0.6);
+    background: linear-gradient(135deg, #FFD54F 0%, #FFC107 100%);
+}
+
+.back-button i {
+    font-size: 1.5rem;
+    color: #000000;
+}
+
+/* ÍNDICE PANAL HEXAGONAL */
+.honeycomb-index {
+    position: fixed;
+    left: 20px;
+    top: 200px; /* <-- ¡Lo bajé un poquito! */
+    /* transform: translateY(-50%); */ /* Quitamos esto para que no se centre verticalmente */
+    z-index: 1000;
+    background: rgba(255,193,7,0.1);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255,193,7,0.3);
+    border-radius: 20px;
+    padding: 20px 15px;
+    max-width: 250px;
+}
+
+.index-title {
+    color: #FFD54F;
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 15px;
+    border-bottom: 2px solid rgba(255,193,7,0.3);
+    padding-bottom: 10px;
+}
+
+.index-item {
+    display: flex;
+    align-items: center;
+    padding: 8px 12px;
+    margin: 5px 0;
+    background: rgba(255,193,7,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-left: 4px solid transparent;
+}
+
+.index-item:hover {
+    background: rgba(255,193,7,0.2);
+    border-left-color: #FFC107;
+    transform: translateX(5px);
+}
+
+.index-item.active {
+    background: rgba(255, 193, 7, 0.3); /* Fondo más oscuro */
+    border-left-color: #FFC107; /* Borde izquierdo pronunciado */
+    transform: translateX(5px);
+    box-shadow: 0 0 10px rgba(255, 193, 7, 0.3);
+}
+
+.index-item i {
+    color: #FFC107;
+    margin-right: 10px;
+    font-size: 1rem;
+}
+
+.index-item span {
+    color: rgba(255,255,255,0.9);
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+/* TIMELINE LATERAL */
+.sidebar-timeline {
+    position: sticky;
+    top: 100px;
+    background: rgba(255,255,255,0.05);
+    border-radius: 20px;
+    padding: 25px;
+    backdrop-filter: blur(15px);
+    border: 1px solid rgba(255,193,7,0.2);
+    margin: 20px;
+    max-height: 80vh;
+    overflow-y: auto;
+}
+
+.timeline-header h4 {
+    color: #FFD54F;
+    font-weight: 700;
+}
+
+.timeline-container {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline-container::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 3px;
+    background: linear-gradient(to bottom, #FFC107, #FF8F00);
+    border-radius: 2px;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -22px;
+    top: 5px;
+    width: 35px;
+    height: 35px;
+    background: linear-gradient(135deg, #FFC107, #FF8F00);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(255,193,7,0.4);
+}
+
+.timeline-dot i {
+    color: white;
+    font-size: 1rem;
+}
+
+.timeline-content h6 {
+    color: #FFD54F;
+    font-weight: 700;
+    margin-bottom: 5px;
+}
+
+.timeline-content small {
+    color: rgba(255,255,255,0.7);
+}
+
+/* CONTENIDO PRINCIPAL */
+.content-area {
+    padding: 20px 30px;
+    margin-left: 280px;
+    margin-right: 40px;
+}
+
+.hero-section {
+    text-center;
+    margin-bottom: 50px;
+    /* Reducir los lados del hexágono SOLO en esta página */
+    clip-path: polygon(50% 0%, 90% 25%, 90% 75%, 50% 100%, 10% 75%, 10% 25%) !important;
+    max-width: 650px !important;
+}
+
+.hero-badge {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFC107, #FF8F00);
+    color: white;
+    padding: 10px 25px;
+    border-radius: 25px;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-title {
+    color: #FFD54F;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 20px;
+}
+
+.hero-subtitle {
+    color: rgba(255,255,255,0.8);
+    font-size: 1.1rem;
+}
+
+.hero-divider {
+    width: 100px;
+    height: 4px;
+    background: linear-gradient(135deg, #FFC107, #FF8F00);
+    margin: 30px auto;
+    border-radius: 2px;
+}
+
+/* PANAL DECORATIVO */
+.honeycomb-decoration {
+    position: absolute;
+    right: -220px;
+    top: 100px;
+    z-index: 1;
+}
+
+.hexagon-crystal {
+    width: 180px;
+    height: 150px;
+    background: linear-gradient(135deg, rgba(255,193,7,0.4) 0%, rgba(255,152,0,0.3) 100%);
+    clip-path: polygon(30% 0%, 70% 0%, 100% 50%, 70% 100%, 30% 100%, 0% 50%);
+    position: absolute;
+    border: 3px solid rgba(255,193,7,0.6);
+    backdrop-filter: blur(5px);
+    animation: crystalFloat 4s ease-in-out infinite;
+}
+
+.hexagon-crystal.hex-1 { top: 0; left: 0; animation-delay: 0s; }
+.hexagon-crystal.hex-2 { top: 85px; left: 130px; animation-delay: 1s; }
+.hexagon-crystal.hex-3 { top: 170px; left: 0; animation-delay: 2s; }
+.hexagon-crystal.hex-4 { top: 255px; left: 130px; animation-delay: 3s; }
+
+@keyframes crystalFloat {
+    0%, 100% { transform: translateY(0) rotate(0deg); opacity: 0.6; }
+    50% { transform: translateY(-10px) rotate(2deg); opacity: 0.9; }
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+    .honeycomb-decoration, .honeycomb-index, .back-button {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .content-area {
+        padding: 15px 20px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    
+    .sidebar-timeline {
+        margin: 10px;
+        padding: 20px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .content-area {
+        margin-left: 260px;
+        margin-right: 30px;
+    }
+}

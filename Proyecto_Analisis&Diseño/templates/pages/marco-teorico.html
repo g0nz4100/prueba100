@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plataforma de Gestión de Pedidos y Productos - Melimel</title>
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="../../static/img/icons/favicon.png" type="image/png" sizes="64x64">
+    <link rel="apple-touch-icon" href="../../static/img/icons/favicon.png" sizes="180x180">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="../../static/css/global/styles.css">
+    <link rel="stylesheet" href="../../static/css/global/bootstrap-custom.css">
+    <link rel="stylesheet" href="../../static/css/components/favicon-boost.css">
+    <link rel="stylesheet" href="../../static/css/pages/acerca.css">
+    <link rel="stylesheet" href="../../static/css/components/accordion-modern.css">
+    <link rel="stylesheet" href="../../static/css/pages/marco-teorico-page.css">
+
+</head>
+<body>
+    <!-- ELEMENTOS DECORATIVOS DE FONDO -->
+    <div class="flower" style="bottom: 10%; left: 5%;">🌸</div>
+    <div class="flower" style="bottom: 15%; left: 15%;">🌺</div>
+    <div class="flower" style="bottom: 8%; right: 10%;">🌼</div>
+    <div class="flower" style="bottom: 20%; right: 20%;">🌻</div>
+    <div class="flower" style="top: 60%; left: 8%;">🌷</div>
+    <div class="flower" style="top: 65%; right: 12%;">🌹</div>
+
+    <!-- ABEJAS ANIMADAS -->
+    <div class="bee-container" style="animation-duration: 18s; animation-delay: 0s;">
+        <div class="bee-wings">
+            <div class="wing left"></div>
+            <div class="wing right"></div>
+        </div>
+        <div class="bee-body">🐝</div>
+    </div>
+
+    <div class="bee-container" style="animation-duration: 22s; animation-delay: 3s; top: 40%;">
+        <div class="bee-wings">
+            <div class="wing left"></div>
+            <div class="wing right"></div>
+        </div>
+        <div class="bee-body">🐝</div>
+    </div>
+
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top" style="background: linear-gradient(135deg, #FFC107 0%, #FFB74D 100%); backdrop-filter: blur(10px); box-shadow: 0 4px 20px rgba(0,0,0,0.1);">
+        <div class="container">
+            <a class="navbar-brand d-flex align-items-center" href="../../index.html">
+                <img src="https://www.melimel.com.bo/wp-content/uploads/logo-meli_Mesa-de-trabajo-1.png" 
+                     alt="Melimel Logo" height="60" class="me-3 rounded-3">
+                <div>
+                    <h4 class="mb-0 text-white fw-bold">Melimel</h4>
+                    <small class="text-white-50">Vivir con gusto</small>
+                </div>
+            </a>
+
+            <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" 
+                    data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" 
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <div class="hexagon-nav ms-auto d-flex flex-wrap justify-content-end align-items-center">
+                    <a class="hexagon-btn" href="../../index.html#inicio">
+                        <div class="hexagon-content">
+                            <i class="bi bi-house-fill hex-icon"></i>
+                            <span class="hex-text">inicio</span>
+                        </div>
+                    </a>
+                    <div class="hexagon-dropdown">
+                        <a class="hexagon-btn active" href="#teoria">
+                            <div class="hexagon-content">
+                                <i class="bi bi-book-fill hex-icon"></i>
+                                <span class="hex-text">marco teórico</span>
+                            </div>
+                        </a>
+                        <div class="hexagon-dropdown-content">
+                            <a href="#introduccion">Introducción</a>
+                            <a href="#antecedentes">Antecedentes</a>
+                            <a href="#planteamiento">Planteamiento del Problema</a>
+                            <a href="#arbol-problemas">Árbol de Problemas</a>
+                            <a href="#formulacion">Formulación del Problema</a>
+                            <a href="#objetivos">Objetivos</a>
+                            <a href="#proposito">Propósito de Estudio</a>
+                            <a href="#metodologia">Metodología</a>
+                            <a href="#planificacion">Plan de Actividades</a>
+                        </div>
+                    </div>
+                    <a class="hexagon-btn" href="../../index.html#analisis">
+                        <div class="hexagon-content">
+                            <i class="bi bi-diagram-3-fill hex-icon"></i>
+                            <span class="hex-text">análisis</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#objetos">
+                        <div class="hexagon-content">
+                            <i class="bi bi-boxes hex-icon"></i>
+                            <span class="hex-text">objetos</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#diagrama">
+                        <div class="hexagon-content">
+                            <i class="bi bi-diagram-2-fill hex-icon"></i>
+                            <span class="hex-text">diagrama</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="video.html">
+                        <div class="hexagon-content">
+                            <i class="bi bi-play-circle-fill hex-icon"></i>
+                            <span class="hex-text">video</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="../../index.html#contacto">
+                        <div class="hexagon-content">
+                            <i class="bi bi-telephone-fill hex-icon"></i>
+                            <span class="hex-text">contacto</span>
+                        </div>
+                    </a>
+                    <a class="hexagon-btn" href="acerca.html">
+                        <div class="hexagon-content">
+                            <i class="bi bi-people-fill hex-icon"></i>
+                            <span class="hex-text">acerca de nosotros</span>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- BOTÓN ATRÁS -->
+    <button onclick="window.history.back()" class="back-button" data-bs-toggle="tooltip" data-bs-placement="right" title="Atrás">
+        <i class="bi bi-arrow-left-circle-fill"></i>
+    </button>
+
+    <!-- ÍNDICE PANAL HEXAGONAL -->
+    <div class="honeycomb-index">
+        <div class="index-title">
+            <i class="bi bi-list-ul me-2"></i>Índice
+        </div>
+        <div class="index-item" onclick="scrollToSection('introduccion')">
+            <i class="bi bi-lightbulb-fill"></i>
+            <span>Introducción</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('antecedentes')">
+            <i class="bi bi-clock-history"></i>
+            <span>Antecedentes</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('planteamiento')">
+            <i class="bi bi-exclamation-triangle-fill"></i>
+            <span>Planteamiento</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('arbol-problemas')">
+            <i class="bi bi-diagram-3-fill"></i>
+            <span>Árbol de Problemas</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('formulacion')">
+            <i class="bi bi-question-circle-fill"></i>
+            <span>Formulación</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('objetivos')">
+            <i class="bi bi-bullseye"></i>
+            <span>Objetivos</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('proposito')">
+            <i class="bi bi-compass"></i>
+            <span>Propósito de Estudio</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('metodologia')">
+            <i class="bi bi-gear-fill"></i>
+            <span>Metodología</span>
+        </div>
+        <div class="index-item" onclick="scrollToSection('planificacion')">
+            <i class="bi bi-calendar-check-fill"></i>
+            <span>Planificación</span>
+        </div>
+    </div>
+
+    <!-- SECCIÓN PRINCIPAL -->
+    <section id="marco-teorico" class="py-5">
+        <!-- Partículas de fondo -->
+        <div class="particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container-fluid position-relative">
+            <div class="row">
+                <!-- CONTENIDO PRINCIPAL -->
+                <div class="col-12 position-relative">
+                    <!-- Panal de Abejas Decorativo -->
+                    <div class="honeycomb-decoration">
+                        <div class="hexagon-crystal hex-1"></div>
+                        <div class="hexagon-crystal hex-2"></div>
+                        <div class="hexagon-crystal hex-3"></div>
+                        <div class="hexagon-crystal hex-4"></div>
+                    </div>
+                    
+                    <div class="content-area">
+                        <!-- Hero Section -->
+                        <div class="hero-section">
+                            <div class="hero-badge">
+                                <span>MARCO TEÓRICO</span>
+                            </div>
+                            <h1 class="hero-title">
+                                📊 Plataforma de Gestión de Pedidos y Productos
+                            </h1>
+                            <p class="hero-subtitle">Sistema Integral para Melimel • Análisis Completo • Proyecto Académico</p>
+                            <div class="hero-divider"></div>
+                        </div>
+
+                        <!-- Acordeón Moderno Bootstrap 5 -->
+                        <div class="accordion accordion-modern" id="marcoTeoricoAccordion">
+                            <!-- Introducción -->
+                            <div class="accordion-item" id="introduccion">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseIntroduccion" aria-expanded="false" aria-controls="collapseIntroduccion">
+                                        <i class="bi bi-lightbulb-fill accordion-icon"></i>
+                                        Introducción
+                                    </button>
+                                </h2>
+                                <div id="collapseIntroduccion" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>El Sistema de Gestión de Pedidos y Productos (SGPP) constituye una solución integral orientada a optimizar los procesos de administración comercial dentro de una organización. Su propósito principal es mejorar la eficiencia en el registro y control de pedidos, la gestión de inventarios de productos, así como la verificación del estado de entrega y facturación. Este sistema busca reducir errores manuales, agilizar la trazabilidad de las operaciones y proporcionar información confiable para la toma de decisiones estratégicas.</p>
+                                        
+                                        <p>El SGPP se desarrolla bajo el paradigma del análisis estructurado (modelo esencial), lo que permite representar de manera clara y detallada los requerimientos funcionales sin entrar en aspectos técnicos de implementación. Este enfoque, inspirado en las propuestas de Yourdon, asegura una solución modular y flexible, capaz de adaptarse a distintos escenarios empresariales. La interfaz del sistema se diseña para ser amigable y sencilla, sin perder de vista la complejidad subyacente de sus funcionalidades, garantizando que tanto usuarios administrativos como operativos puedan interactuar con facilidad.</p>
+                                        
+                                        <p>En el marco de este documento se presentan los fundamentos teóricos que justifican el diseño y funcionamiento del SGPP, así como los beneficios y retos que implica su implementación en entornos comerciales modernos. Se busca demostrar cómo la integración de procesos de pedidos e inventarios en un solo sistema contribuye a la eficiencia organizacional, la reducción de costos y la mejora en la satisfacción del cliente.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-gear-fill me-2"></i>Características del SGPP</h5>
+                                            <ul>
+                                                <li><strong>Análisis Estructurado:</strong> Basado en el modelo esencial de Yourdon</li>
+                                                <li><strong>Modularidad:</strong> Diseño flexible y adaptable a diferentes escenarios</li>
+                                                <li><strong>Interfaz Amigable:</strong> Facilidad de uso para usuarios administrativos y operativos</li>
+                                                <li><strong>Trazabilidad:</strong> Control completo del ciclo de vida de pedidos</li>
+                                                <li><strong>Información Confiable:</strong> Datos precisos para decisiones estratégicas</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-clipboard-data"></i>
+                                                <h6>Gestión de Pedidos</h6>
+                                                <p>Control eficiente del registro y seguimiento de órdenes comerciales</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-box-seam"></i>
+                                                <h6>Control de Inventarios</h6>
+                                                <p>Administración en tiempo real del stock y productos disponibles</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-truck"></i>
+                                                <h6>Estado de Entrega</h6>
+                                                <p>Verificación y seguimiento del proceso de distribución</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Antecedentes -->
+                            <div class="accordion-item" id="antecedentes">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseAntecedentes" aria-expanded="false" aria-controls="collapseAntecedentes">
+                                        <i class="bi bi-clock-history accordion-icon"></i>
+                                        Antecedentes
+                                    </button>
+                                </h2>
+                                <div id="collapseAntecedentes" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>El Sistema de Gestión de Pedidos y Productos (SGPP) surge como respuesta a la necesidad de las organizaciones de contar con herramientas que permitan administrar de manera eficiente los procesos comerciales relacionados con la recepción de pedidos, el control de inventarios y la distribución de productos. Tradicionalmente, estas actividades se realizaban de forma manual o mediante sistemas aislados, lo que generaba duplicidad de información, errores en el registro y dificultades en la trazabilidad de las operaciones.</p>
+                                        
+                                        <p>La evolución de los sistemas de información ha permitido que la gestión de pedidos e inventarios se integre en plataformas centralizadas, capaces de ofrecer una visión completa y en tiempo real del estado de los productos y las solicitudes de los clientes. El SGPP se fundamenta en el paradigma del análisis estructurado (modelo esencial), el cual facilita la identificación clara de los requerimientos funcionales sin necesidad de entrar en detalles técnicos de implementación. Este enfoque, propuesto por Yourdon, asegura un desarrollo modular y flexible, adaptado a las necesidades específicas de cada organización.</p>
+                                        
+                                        <p>La implementación de sistemas de gestión de pedidos y productos ha demostrado beneficios significativos en distintos sectores: reducción de tiempos de procesamiento, disminución de errores humanos, optimización de inventarios y mejora en la satisfacción del cliente. Sin embargo, también plantea retos importantes, como la necesidad de capacitación de los usuarios, la integración con sistemas existentes y la adaptación a procesos internos previamente establecidos. En este documento se analizan los fundamentos teóricos que justifican el diseño y funcionamiento del SGPP, así como los beneficios y desafíos que implica su aplicación en entornos empresariales modernos.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-timeline me-2"></i>Beneficios Demostrados</h5>
+                                            <ul>
+                                                <li><strong>Reducción de tiempos:</strong> Procesamiento más rápido de pedidos</li>
+                                                <li><strong>Menos errores:</strong> Disminución de errores humanos</li>
+                                                <li><strong>Optimización:</strong> Mejor gestión de inventarios</li>
+                                                <li><strong>Satisfacción:</strong> Mejora en la experiencia del cliente</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-check-circle"></i>
+                                                <h6>Beneficios</h6>
+                                                <p>Eficiencia, precisión y satisfacción del cliente</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                <h6>Retos</h6>
+                                                <p>Capacitación, integración y adaptación</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-gear"></i>
+                                                <h6>Modelo Esencial</h6>
+                                                <p>Análisis estructurado de Yourdon</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Planteamiento del Problema -->
+                            <div class="accordion-item" id="planteamiento">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlanteamiento" aria-expanded="false" aria-controls="collapsePlanteamiento">
+                                        <i class="bi bi-exclamation-triangle-fill accordion-icon"></i>
+                                        Planteamiento del Problema
+                                    </button>
+                                </h2>
+                                <div id="collapsePlanteamiento" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>La ausencia de un sistema unificado para la gestión de pedidos y productos en las organizaciones comerciales genera múltiples desafíos. Actualmente, las tareas relacionadas con el registro de pedidos, la actualización de inventarios, la verificación de disponibilidad de productos y el control de facturación suelen realizarse de manera manual o mediante sistemas independientes. Esta fragmentación provoca ineficiencias, errores frecuentes y demoras en la atención al cliente.</p>
+                                        
+                                        <p>Por ejemplo, el proceso de recepción y validación de pedidos requiere que el personal administrativo realice tareas repetitivas, como cotejar inventarios, verificar precios y registrar datos en diferentes plataformas. Estas actividades no solo consumen tiempo valioso, sino que también son altamente propensas a errores humanos, lo que puede derivar en pérdidas económicas, incumplimiento de plazos de entrega y disminución de la satisfacción del cliente.</p>
+                                        
+                                        <p>Además, los responsables de la gestión carecen de acceso inmediato y confiable a información consolidada sobre el estado de los pedidos y el nivel de inventarios, lo que dificulta la toma de decisiones estratégicas en tiempo real. La falta de integración entre las áreas de ventas, almacén y facturación limita la capacidad de respuesta de la organización y afecta directamente su competitividad en el mercado.</p>
+                                        
+                                        <p>Es en este contexto que surge la necesidad de implementar un Sistema de Gestión de Pedidos y Productos (SGPP), capaz de centralizar y automatizar estos procesos. Dicho sistema busca mejorar la eficiencia operativa, reducir errores, optimizar el control de inventarios y garantizar una atención más ágil y precisa a los clientes, contribuyendo así al fortalecimiento de la gestión empresarial.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-exclamation-circle me-2"></i>Problemas Críticos Identificados</h5>
+                                            <ul>
+                                                <li><strong>Fragmentación de sistemas:</strong> Procesos independientes sin integración</li>
+                                                <li><strong>Tareas repetitivas:</strong> Cotejar inventarios y verificar precios manualmente</li>
+                                                <li><strong>Errores humanos:</strong> Pérdidas económicas e incumplimiento de plazos</li>
+                                                <li><strong>Falta de información:</strong> Ausencia de datos consolidados en tiempo real</li>
+                                                <li><strong>Limitada capacidad de respuesta:</strong> Afectación de la competitividad</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-clock-history"></i>
+                                                <h6>Ineficiencias</h6>
+                                                <p>Tiempo valioso perdido en tareas manuales repetitivas</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                <h6>Errores Frecuentes</h6>
+                                                <p>Procesos manuales propensos a fallas humanas</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-graph-down"></i>
+                                                <h6>Impacto Negativo</h6>
+                                                <p>Reducción de competitividad y satisfacción del cliente</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Árbol de Problemas -->
+                            <div class="accordion-item" id="arbol-problemas">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseArbol" aria-expanded="false" aria-controls="collapseArbol">
+                                        <i class="bi bi-diagram-3-fill accordion-icon"></i>
+                                        Árbol de Problemas
+                                    </button>
+                                </h2>
+                                <div id="collapseArbol" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>El análisis estructurado de las causas y efectos de los problemas identificados en la gestión de pedidos y productos revela una red compleja de interrelaciones que afectan la eficiencia operacional.</p>
+                                        
+                                        <div class="text-center my-4">
+                                            <img src="../../static/img/marco_teorico/arbol_problemas.png" alt="Árbol de Problemas" class="img-fluid rounded shadow" style="max-width: 100%; height: auto;">
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-arrow-up-circle"></i>
+                                                <h6>Efectos</h6>
+                                                <p>Pérdida de clientes, costos elevados, baja competitividad</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-bullseye"></i>
+                                                <h6>Problema Central</h6>
+                                                <p>Ineficiencia en gestión de pedidos y productos</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-arrow-down-circle"></i>
+                                                <h6>Causas</h6>
+                                                <p>Procesos manuales, falta de integración, tecnología obsoleta</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Formulación del Problema -->
+                            <div class="accordion-item" id="formulacion">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFormulacion" aria-expanded="false" aria-controls="collapseFormulacion">
+                                        <i class="bi bi-question-circle-fill accordion-icon"></i>
+                                        Formulación del Problema
+                                    </button>
+                                </h2>
+                                <div id="collapseFormulacion" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>El problema principal que aborda el Sistema de Gestión de Pedidos y Productos (SGPP) es la falta de un sistema unificado para la administración de los procesos comerciales relacionados con pedidos, inventarios y facturación dentro de una organización. Esta carencia de integración genera ineficiencias operativas, errores en el registro de pedidos, demoras en la actualización de inventarios y un control inadecuado de la información financiera.</p>
+                                        
+                                        <p>La gestión manual o mediante sistemas independientes provoca duplicidad de datos, pérdida de información y dificultades en la trazabilidad de las operaciones. Como consecuencia, se incrementan los costos operativos, se reducen los niveles de satisfacción del cliente y se limita la competitividad de la empresa en el mercado.</p>
+                                        
+                                        <p>El SGPP busca resolver estos problemas ofreciendo una solución tecnológica que centralice y automatice la gestión de pedidos, productos e información financiera en una plataforma accesible y eficiente. De este modo, se pretende optimizar los recursos de la organización, mejorar la comunicación entre las áreas de ventas, almacén y administración, y reducir los errores humanos en los procesos clave de gestión. Asimismo, el sistema permitirá contar con información confiable y en tiempo real, lo que facilitará la toma de decisiones estratégicas y contribuirá al fortalecimiento de la eficiencia empresarial.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-diagram-2 me-2"></i>Mapa Conceptual del Problema</h5>
+                                            <p><strong>Flujo de Impacto:</strong> Falta de Integración → Pedidos Desorganizados → Inventario Desactualizado → Facturación Errónea → Cliente Insatisfecho</p>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-graph-down me-2"></i>Impacto en la Organización</h5>
+                                            <ul>
+                                                <li><strong>Ineficiencia:</strong> Procesos manuales lentos y propensos a errores</li>
+                                                <li><strong>Errores frecuentes:</strong> Duplicidad de datos y pérdida de información</li>
+                                                <li><strong>Costos elevados:</strong> Recursos desperdiciados en tareas repetitivas</li>
+                                                <li><strong>Baja satisfacción del cliente:</strong> Demoras y errores en la atención</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-arrow-up-circle me-2"></i>Solución Propuesta - Diagrama de Flujo</h5>
+                                            <p><strong>Flujo de Mejora:</strong> Sistema Unificado → Procesos Centralizados → Información Confiable → Mejora Competitiva</p>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-exclamation-triangle"></i>
+                                                <h6>Problema Central</h6>
+                                                <p>Carencia de sistema unificado para procesos comerciales</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-arrow-down-circle"></i>
+                                                <h6>Consecuencias</h6>
+                                                <p>Ineficiencia, errores y pérdida de competitividad</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-gear-wide-connected"></i>
+                                                <h6>Solución SGPP</h6>
+                                                <p>Plataforma tecnológica centralizada y eficiente</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Objetivos -->
+                            <div class="accordion-item" id="objetivos">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObjetivos" aria-expanded="false" aria-controls="collapseObjetivos">
+                                        <i class="bi bi-bullseye accordion-icon"></i>
+                                        Objetivos
+                                    </button>
+                                </h2>
+                                <div id="collapseObjetivos" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <div class="highlight-box">
+                                            <h4><i class="bi bi-bullseye me-2"></i>🎯 Objetivo General</h4>
+                                            <p>Diseñar e implementar un Sistema de Gestión de Pedidos y Productos (SGPP) que centralice y automatice los procesos de registro de pedidos, control de inventarios y facturación, con el fin de mejorar la eficiencia operativa, reducir errores humanos y proporcionar información confiable para la toma de decisiones estratégicas dentro de la organización.</p>
+                                        </div>
+                                        
+                                        <h5><i class="bi bi-list-check me-2"></i>📌 Objetivos Específicos</h5>
+                                        <ul>
+                                            <li>Optimizar el registro de pedidos mediante un sistema digital que permita capturar, validar y almacenar la información de manera rápida y precisa.</li>
+                                            <li>Automatizar el control de inventarios, garantizando la actualización en tiempo real de la disponibilidad de productos y evitando duplicidad o pérdida de datos.</li>
+                                            <li>Integrar la gestión de pedidos con la facturación, asegurando coherencia entre las áreas de ventas, almacén y administración.</li>
+                                            <li>Reducir errores humanos en los procesos de registro, validación y seguimiento de pedidos mediante la estandarización de procedimientos.</li>
+                                            <li>Mejorar la trazabilidad de las operaciones, ofreciendo reportes claros y accesibles sobre el estado de pedidos, inventarios y facturación.</li>
+                                            <li>Facilitar la toma de decisiones estratégicas a través de información consolidada y confiable en tiempo real.</li>
+                                            <li>Incrementar la satisfacción del cliente, garantizando tiempos de respuesta más ágiles y un servicio más eficiente.</li>
+                                        </ul>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-speedometer2"></i>
+                                                <h6>Eficiencia</h6>
+                                                <p>Automatización y optimización de procesos</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-shield-check"></i>
+                                                <h6>Precisión</h6>
+                                                <p>Reducción de errores humanos</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-graph-up-arrow"></i>
+                                                <h6>Crecimiento</h6>
+                                                <p>Mejora en satisfacción del cliente</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Propósito de Estudio -->
+                            <div class="accordion-item" id="proposito">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProposito" aria-expanded="false" aria-controls="collapseProposito">
+                                        <i class="bi bi-compass accordion-icon"></i>
+                                        Propósito de Estudio
+                                    </button>
+                                </h2>
+                                <div id="collapseProposito" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>El propósito de este estudio es desarrollar una comprensión integral de los procesos de gestión de pedidos y productos en organizaciones comerciales, con el fin de diseñar una solución tecnológica que aborde las deficiencias identificadas en los sistemas actuales.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-target me-2"></i>Finalidades del Estudio</h5>
+                                            <ul>
+                                                <li><strong>Analizar:</strong> Los procesos actuales de gestión comercial</li>
+                                                <li><strong>Identificar:</strong> Oportunidades de mejora y automatización</li>
+                                                <li><strong>Proponer:</strong> Una solución tecnológica integral</li>
+                                                <li><strong>Validar:</strong> La efectividad del sistema propuesto</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-search"></i>
+                                                <h6>Investigación</h6>
+                                                <p>Análisis profundo de procesos comerciales</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-lightbulb"></i>
+                                                <h6>Innovación</h6>
+                                                <p>Desarrollo de soluciones tecnológicas</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-check-circle"></i>
+                                                <h6>Validación</h6>
+                                                <p>Comprobación de efectividad</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Metodología -->
+                            <div class="accordion-item" id="metodologia">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMetodologia" aria-expanded="false" aria-controls="collapseMetodologia">
+                                        <i class="bi bi-gear-fill accordion-icon"></i>
+                                        Metodología
+                                    </button>
+                                </h2>
+                                <div id="collapseMetodologia" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>La metodología utilizada en el desarrollo del Sistema de Gestión de Pedidos y Productos (SGPP) se fundamenta en el análisis estructurado y en el modelo esencial. Este enfoque permite descomponer el sistema en componentes lógicos y bien definidos, priorizando la comprensión de los procesos comerciales antes de abordar la implementación técnica.</p>
+                                        
+                                        <p>En la metodología propuesta para el SGPP se adopta el enfoque del análisis estructurado, cuyo modelo esencial, formulado por Edward Yourdon, se considera un estándar para el diseño y desarrollo de sistemas de información. Este enfoque pone énfasis en la descomposición jerárquica de los procesos del sistema, lo que permite obtener una visión clara y comprensible de los requisitos sin caer en detalles técnicos prematuros.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-tools me-2"></i>Herramientas de Documentación</h5>
+                                            <ul>
+                                                <li><strong>Diagramas de Flujo de Datos (DFD):</strong> Representan las interacciones entre los diferentes módulos del sistema, como la gestión de pedidos, el control de inventarios y la facturación.</li>
+                                                <li><strong>Diccionario de Datos:</strong> Documenta de manera precisa los flujos de información, las entidades involucradas y las estructuras requeridas para garantizar la coherencia del sistema.</li>
+                                                <li><strong>Diagramas de procesos jerárquicos:</strong> Permiten visualizar la descomposición de las funciones principales en subprocesos más manejables.</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <p>Al seguir los principios de Yourdon, se busca garantizar que el SGPP esté diseñado de manera eficiente y lógica, alineándose con las necesidades de los usuarios y asegurando la máxima funcionalidad, independientemente de las restricciones tecnológicas.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-list-ol me-2"></i>Fases del Proceso de Desarrollo</h5>
+                                            <ul>
+                                                <li><strong>Análisis de requerimientos:</strong> Identificación de las necesidades de la organización en relación con pedidos, inventarios y facturación.</li>
+                                                <li><strong>Modelado de procesos:</strong> Elaboración de DFD y diagramas jerárquicos que representen las interacciones entre módulos.</li>
+                                                <li><strong>Documentación de datos:</strong> Construcción del diccionario de datos y definición de las estructuras de información necesarias.</li>
+                                                <li><strong>Diseño funcional:</strong> Detalle de las funcionalidades esenciales que el sistema debe cumplir, sin entrar en aspectos técnicos de implementación.</li>
+                                                <li><strong>Validación:</strong> Revisión de los modelos y documentación con los usuarios para asegurar que el sistema cumpla con los requisitos planteados.</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <p>Este enfoque asegura que el SGPP cumpla con los requerimientos del usuario, mantenga coherencia en sus procesos y ofrezca una solución modular y flexible, capaz de adaptarse a distintos escenarios empresariales.</p>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-diagram-3"></i>
+                                                <h6>Modelo Esencial</h6>
+                                                <p>Enfoque de Edward Yourdon para análisis estructurado</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-flow-chart"></i>
+                                                <h6>DFD</h6>
+                                                <p>Diagramas de Flujo de Datos para modelado</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-check2-square"></i>
+                                                <h6>Validación</h6>
+                                                <p>Revisión continua con usuarios finales</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Planificación -->
+                            <div class="accordion-item" id="planificacion">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePlanificacion" aria-expanded="false" aria-controls="collapsePlanificacion">
+                                        <i class="bi bi-calendar-check-fill accordion-icon"></i>
+                                        Planificación de Actividades
+                                    </button>
+                                </h2>
+                                <div id="collapsePlanificacion" class="accordion-collapse collapse" data-bs-parent="#marcoTeoricoAccordion">
+                                    <div class="accordion-body">
+                                        <p>La planificación de actividades para el desarrollo del Sistema de Gestión de Pedidos y Productos (SGPP) se organiza en etapas secuenciales que garantizan un proceso ordenado y trazable. Cada fase se orienta a cumplir objetivos específicos, asegurando que el sistema responda a las necesidades de la organización y se mantenga alineado con los principios del análisis estructurado.</p>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-calendar-event me-2"></i>Cronograma Visual por Fases</h5>
+                                            <p><strong>Timeline:</strong> Análisis → Diseño → Implementación → Pruebas → Validación</p>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-1-circle me-2"></i>Fase de Análisis</h5>
+                                            <ul>
+                                                <li>Reuniones con los principales colaboradores (ventas, almacén y administración)</li>
+                                                <li>Definición de funciones esenciales: registro de pedidos, control de inventarios y facturación</li>
+                                                <li>Identificación de problemas actuales y expectativas de mejora</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-2-circle me-2"></i>Fase de Diseño</h5>
+                                            <ul>
+                                                <li>Elaboración de Diagramas de Flujo de Datos (DFD) entre módulos del sistema</li>
+                                                <li>Construcción del Diccionario de Datos: Pedido, Producto, Cliente, Factura</li>
+                                                <li>Definición detallada de procesos, flujos de información y almacenes de datos</li>
+                                                <li>Diseño de interfaz conceptual priorizando simplicidad y usabilidad</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-3-circle me-2"></i>Fase de Implementación</h5>
+                                            <ul>
+                                                <li>Desarrollo del sistema en entorno controlado siguiendo modelos de diseño</li>
+                                                <li>Integración de módulos de pedidos, inventarios y facturación</li>
+                                                <li>Configuración de pruebas iniciales para validar coherencia y funcionalidad</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-4-circle me-2"></i>Fase de Pruebas y Validación</h5>
+                                            <ul>
+                                                <li>Ejecución de pruebas en entornos simulados y controlados</li>
+                                                <li>Validación con usuarios finales verificando eficiencia en registro y actualización</li>
+                                                <li>Ajustes y correcciones según resultados obtenidos</li>
+                                                <li>Documentación final del sistema y capacitación a usuarios</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="highlight-box">
+                                            <h5><i class="bi bi-gear-wide-connected me-2"></i>Características de la Planificación</h5>
+                                            <ul>
+                                                <li><strong>Iterativa y flexible:</strong> Cada etapa será revisada y ajustada según resultados</li>
+                                                <li><strong>Colaborativa:</strong> Involucra usuarios clave en todo el proceso</li>
+                                                <li><strong>Orientada a la eficiencia:</strong> Reduce tiempos, minimiza errores y garantiza información confiable</li>
+                                            </ul>
+                                        </div>
+                                        
+                                        <div class="info-cards">
+                                            <div class="info-card">
+                                                <i class="bi bi-people"></i>
+                                                <h6>Roles y Responsabilidades</h6>
+                                                <p>Ventas, Almacén y Administración trabajando colaborativamente</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-arrow-repeat"></i>
+                                                <h6>Proceso Secuencial</h6>
+                                                <p>Cada fase alimenta y mejora la siguiente etapa</p>
+                                            </div>
+                                            <div class="info-card">
+                                                <i class="bi bi-check-circle"></i>
+                                                <h6>Validación Continua</h6>
+                                                <p>Revisión y ajuste constante con usuarios finales</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER SIMPLIFICADO -->
+    <footer id="contacto">
+      <div class="footer-content">
+        <!-- SECCIÓN DE CONTACTO -->
+        <div class="footer-section">
+          <h3>🍯 Melimel</h3>
+          <p>"Vivir con gusto" - La dulzura natural de nuestras abejas</p>
+
+          <div class="contact-person">
+            <h4>📞 Contáctanos</h4>
+            <p>📱 WhatsApp: +591 73659001</p>
+            <p>✉️ contacto@melimel.com.bo</p>
+            <p>🌐 www.melimel.com.bo</p>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE LA EMPRESA -->
+        <div class="footer-section">
+          <h3>🏢 Nuestra Empresa</h3>
+          <p>Especialistas en productos apícolas de calidad premium</p>
+
+          <div class="contact-person">
+            <h4>Melimel Bolivia</h4>
+            <p>🏆 Fundada en 2009</p>
+            <p>🌍 Ubicación: Bolivia</p>
+            <p>🍯 Miel Artesanal y Productos Naturales</p>
+            <p>🌱 Certificaciones Orgánico Internacional</p>
+            <p>💛 Misión: Vivir con gusto naturalmente</p>
+          </div>
+        </div>
+
+        <!-- SECCIÓN DE REDES SOCIALES -->
+        <div class="footer-section">
+          <h3>🌐 Síguenos</h3>
+          <div class="social-icons">
+            <a href="#" class="social-icon">📘</a>
+            <a href="#" class="social-icon">📷</a>
+            <a href="#" class="social-icon">💼</a>
+            <a href="#" class="social-icon">🎵</a>
+          </div>
+
+          <div style="margin-top: 20px;">
+            <p>
+              <strong>Productos:</strong>
+            </p>
+            <p>🍯 Miel Pura • 🌿 Extractos Naturales</p>
+            <p>🌱 Productos Orgánicos • 🏆 Calidad Premium</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- INFORMACIÓN DE COPYRIGHT -->
+      <div class="footer-bottom">
+        © Copyright 2024 Melimel Bolivia - Todos los derechos reservados<br />
+        "Vivir con gusto" - Diseñado con 💛 para los amantes de la miel natural
+      </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script src="../../static/js/components/accordion-fix.js"></script>
+    <script src="../../static/js/components/navbar-navigation.js"></script>
+    
+    <!-- Script adicional para debugging -->
+    <script>
+        // Verificar que Bootstrap esté cargado
+        if (typeof bootstrap === 'undefined') {
+            console.error('Bootstrap no está cargado');
+        } else {
+            console.log('Bootstrap cargado correctamente');
+        }
+        
+        // Inicializar tooltips
+        var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+        var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+            return new bootstrap.Tooltip(tooltipTriggerEl);
+        });
+    </script>
+</body>
+</html>
